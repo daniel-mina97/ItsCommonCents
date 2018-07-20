@@ -133,9 +133,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="yearlyIncomeInput">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="yearlyIncomeInputActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="housingInput">
     </Component>

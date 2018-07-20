@@ -49,9 +49,6 @@ public class SettingsInitializer extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Transportation:");
 
-        yearlyIncomeInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                yearlyIncomeInputActionPerformed(evt);
             }
         });
 
@@ -117,9 +114,6 @@ public class SettingsInitializer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void yearlyIncomeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yearlyIncomeInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_yearlyIncomeInputActionPerformed
 
     /**
      * @param args the command line arguments
