@@ -27,6 +27,7 @@ public class SettingsInitializer extends javax.swing.JFrame {
         entertainmentInput = new javax.swing.JTextField();
         transportationInput = new javax.swing.JTextField();
         miscellaneousInput = new javax.swing.JTextField();
+        saveButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Budget Settings");
@@ -49,6 +50,10 @@ public class SettingsInitializer extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Transportation:");
 
+        saveButton.setText("Save");
+        saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveButtonMouseClicked(evt);
             }
         });
 
@@ -59,6 +64,7 @@ public class SettingsInitializer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(58, 58, 58)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(saveButton)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel4)
@@ -108,7 +114,9 @@ public class SettingsInitializer extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(miscellaneousInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(saveButton)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
@@ -140,6 +148,7 @@ public class SettingsInitializer extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField miscellaneousInput;
+    private javax.swing.JButton saveButton;
     private javax.swing.JTextField transportationInput;
     private javax.swing.JTextField yearlyIncomeInput;
     // End of variables declaration//GEN-END:variables
