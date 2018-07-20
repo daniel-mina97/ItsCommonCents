@@ -1,6 +1,6 @@
 package Forms;
 
-import itscommoncents.InputValidator;
+import ItsCommonCents.InputValidator;
 public class SettingsInitializer extends javax.swing.JFrame {
 
     public SettingsInitializer() {

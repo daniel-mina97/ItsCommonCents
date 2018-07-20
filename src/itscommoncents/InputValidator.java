@@ -1,4 +1,4 @@
-package itscommoncents;
+package ItsCommonCents;
 
 import java.lang.Character;
 
