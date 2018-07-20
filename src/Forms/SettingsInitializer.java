@@ -1,5 +1,6 @@
 package Forms;
 
+import itscommoncents.InputValidator;
 public class SettingsInitializer extends javax.swing.JFrame {
 
     public SettingsInitializer() {
@@ -122,6 +123,9 @@ public class SettingsInitializer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
+        System.out.println(InputValidator.canConvertStringToDollars(yearlyIncomeInput.getText()));
+    }//GEN-LAST:event_saveButtonMouseClicked
 
     /**
      * @param args the command line arguments
