@@ -124,9 +124,19 @@ public class SettingsInitializer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
-        System.out.println(InputValidator.canConvertStringToDollars(yearlyIncomeInput.getText()));
+        printIfValidDollarAmount(yearlyIncomeInput.getText());
+        printIfValidDollarAmount(housingInput.getText());
+        printIfValidDollarAmount(groceriesInput.getText());
+        printIfValidDollarAmount(entertainmentInput.getText());
+        printIfValidDollarAmount(transportationInput.getText());
+        printIfValidDollarAmount(miscellaneousInput.getText());
     }//GEN-LAST:event_saveButtonMouseClicked
-
+    
+    private static void printIfValidDollarAmount(String input) {
+        if(InputValidator.canConvertStringToDollars(input)) {
+            System.out.println(input);
+        }
+    }
     /**
      * @param args the command line arguments
      */
