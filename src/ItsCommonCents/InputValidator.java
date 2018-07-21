@@ -16,6 +16,9 @@ public class InputValidator {
             else if(c == '.' && !decimalPointPassed) {
                 decimalPointPassed = true;
             }
+            else if (c == '0' && decimalPlacesCount >= 2) {
+                continue;
+            }
             else {
                 return false;
             }
