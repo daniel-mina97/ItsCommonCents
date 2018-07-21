@@ -16,12 +16,12 @@ public class SettingsInitializer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        yearlyIncomeLabel = new javax.swing.JLabel();
+        housingLabel = new javax.swing.JLabel();
+        groceriesLabel = new javax.swing.JLabel();
+        entertainmentLabel = new javax.swing.JLabel();
+        miscellaneousLabel = new javax.swing.JLabel();
+        transportationLabel = new javax.swing.JLabel();
         yearlyIncomeInput = new javax.swing.JTextField();
         housingInput = new javax.swing.JTextField();
         groceriesInput = new javax.swing.JTextField();
@@ -33,23 +33,23 @@ public class SettingsInitializer extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Budget Settings");
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel1.setText("Yearly Income:");
+        yearlyIncomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        yearlyIncomeLabel.setText("Yearly Income:");
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Housing/Rent:");
+        housingLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        housingLabel.setText("Housing/Rent:");
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Groceries:");
+        groceriesLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        groceriesLabel.setText("Groceries:");
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel4.setText("Entertainment:");
+        entertainmentLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        entertainmentLabel.setText("Entertainment:");
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel5.setText("Miscellaneous:");
+        miscellaneousLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        miscellaneousLabel.setText("Miscellaneous:");
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel6.setText("Transportation:");
+        transportationLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        transportationLabel.setText("Transportation:");
 
         saveButton.setText("Save");
         saveButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -68,10 +68,10 @@ public class SettingsInitializer extends javax.swing.JFrame {
                     .addComponent(saveButton)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                            .addComponent(entertainmentLabel)
+                            .addComponent(groceriesLabel)
+                            .addComponent(housingLabel)
+                            .addComponent(yearlyIncomeLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(yearlyIncomeInput)
@@ -79,11 +79,11 @@ public class SettingsInitializer extends javax.swing.JFrame {
                             .addComponent(groceriesInput)
                             .addComponent(entertainmentInput, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                        .addComponent(transportationLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(transportationInput, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(miscellaneousLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(miscellaneousInput, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(76, Short.MAX_VALUE))
@@ -93,27 +93,27 @@ public class SettingsInitializer extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(yearlyIncomeLabel)
                     .addComponent(yearlyIncomeInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(housingLabel)
                     .addComponent(housingInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(groceriesLabel)
                     .addComponent(groceriesInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(entertainmentLabel)
                     .addComponent(entertainmentInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(transportationLabel)
                     .addComponent(transportationInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(miscellaneousLabel)
                     .addComponent(miscellaneousInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(saveButton)
@@ -153,17 +153,17 @@ public class SettingsInitializer extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField entertainmentInput;
+    private javax.swing.JLabel entertainmentLabel;
     private javax.swing.JTextField groceriesInput;
+    private javax.swing.JLabel groceriesLabel;
     private javax.swing.JTextField housingInput;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel housingLabel;
     private javax.swing.JTextField miscellaneousInput;
+    private javax.swing.JLabel miscellaneousLabel;
     private javax.swing.JButton saveButton;
     private javax.swing.JTextField transportationInput;
+    private javax.swing.JLabel transportationLabel;
     private javax.swing.JTextField yearlyIncomeInput;
+    private javax.swing.JLabel yearlyIncomeLabel;
     // End of variables declaration//GEN-END:variables
 }
