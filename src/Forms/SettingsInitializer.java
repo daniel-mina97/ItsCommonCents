@@ -1,6 +1,9 @@
 package Forms;
 
 import ItsCommonCents.InputValidator;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class SettingsInitializer extends javax.swing.JFrame {
 
     public SettingsInitializer() {
@@ -133,8 +136,10 @@ public class SettingsInitializer extends javax.swing.JFrame {
     }//GEN-LAST:event_saveButtonMouseClicked
     
     private static void printIfValidDollarAmount(String input) {
-        if(InputValidator.canConvertStringToDollars(input)) {
-            System.out.println(input);
+        try {
+            InputValidator.convertStringToDollars(input);
+        } catch (ParseException ex) {
+            Logger.getLogger(SettingsInitializer.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     /**
