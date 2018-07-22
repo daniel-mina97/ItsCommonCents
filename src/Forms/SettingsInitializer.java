@@ -127,19 +127,39 @@ public class SettingsInitializer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
-        printIfValidDollarAmount(yearlyIncomeInput.getText());
-        printIfValidDollarAmount(housingInput.getText());
-        printIfValidDollarAmount(groceriesInput.getText());
-        printIfValidDollarAmount(entertainmentInput.getText());
-        printIfValidDollarAmount(transportationInput.getText());
-        printIfValidDollarAmount(miscellaneousInput.getText());
+        /* Needs to: make sure total budget is less than or equal to income
+        and transfer budget data between forms OR save directly to local database.
+        */
+        
+        //ALSO we need to clarify - is each budget category per month or per year?
+        
+        double yearlyIncome = returnValidDollarAmount(yearlyIncomeInput.getText());
+        double housing = returnValidDollarAmount(housingInput.getText());
+        double groceries = returnValidDollarAmount(groceriesInput.getText());
+        double entertainment = returnValidDollarAmount(entertainmentInput.getText());
+        double transport = returnValidDollarAmount(transportationInput.getText());
+        double misc = returnValidDollarAmount(miscellaneousInput.getText());
+        
+        double totalBudget = housing + groceries + entertainment + transport + misc;
+        
+        if(totalBudget <= yearlyIncome){
+            System.out.println("Within Income");
+            //save information to database (all individual budgets + yearly income)
+            //move onto next screen
+        }else{
+            System.out.println("Over Income");
+            //present error dialogue box to user
+        }      
     }//GEN-LAST:event_saveButtonMouseClicked
+
     
-    private static void printIfValidDollarAmount(String input) {
+    
+    private static double returnValidDollarAmount(String input) {
         try {
-            InputValidator.convertStringToDollars(input);
+            return InputValidator.convertStringToDollars(input);
         } catch (ParseException ex) {
             Logger.getLogger(SettingsInitializer.class.getName()).log(Level.SEVERE, null, ex);
+            throw ParseException; //!!!!! idk if this is how to handle this this.
         }
     }
     /**
