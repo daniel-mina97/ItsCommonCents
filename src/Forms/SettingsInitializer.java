@@ -142,6 +142,7 @@ public class SettingsInitializer extends javax.swing.JFrame {
         
         double totalBudget = housing + groceries + entertainment + transport + misc;
         
+        //!!!!!Bug: still computes income if an invalid character is entered
         if(totalBudget <= yearlyIncome){
             System.out.println("Within Income");
             //save information to database (all individual budgets + yearly income)
@@ -159,7 +160,7 @@ public class SettingsInitializer extends javax.swing.JFrame {
             return InputValidator.convertStringToDollars(input);
         } catch (ParseException ex) {
             Logger.getLogger(SettingsInitializer.class.getName()).log(Level.SEVERE, null, ex);
-            throw ParseException; //!!!!! idk if this is how to handle this this.
+            throw new IllegalArgumentException(); //!!!!! idk if this is how to handle this this.
         }
     }
     /**
