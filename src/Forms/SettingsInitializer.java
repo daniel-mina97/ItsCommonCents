@@ -4,10 +4,14 @@ import ItsCommonCents.InputValidator;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.ArrayList;
 public class SettingsInitializer extends javax.swing.JFrame {
 
+    private ArrayList<javax.swing.JTextField> componentList;
+    
     public SettingsInitializer() {
         initComponents();
+        putInputComponentsInList();
     }
 
     /**
@@ -126,6 +130,15 @@ public class SettingsInitializer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void putInputComponentsInList() {
+        componentList = new ArrayList();
+        componentList.add(yearlyIncomeInput);
+        componentList.add(housingInput);
+        componentList.add(groceriesInput);
+        componentList.add(entertainmentInput);
+        componentList.add(transportationInput);
+        componentList.add(miscellaneousInput);
+    }
     private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
         /* Needs to: make sure total budget is less than or equal to income
         and transfer budget data between forms OR save directly to local database.
