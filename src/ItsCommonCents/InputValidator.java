@@ -35,7 +35,4 @@ public class InputValidator {
             return -1;
         }
     }
-    
-    
-    
 }

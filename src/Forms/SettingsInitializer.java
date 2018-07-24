@@ -175,8 +175,6 @@ public class SettingsInitializer extends javax.swing.JFrame {
         }      
     }//GEN-LAST:event_saveButtonMouseClicked
 
-    
-    
     private static double returnValidDollarAmount(String input) {
         try {
             return InputValidator.convertStringToDollars(input);
