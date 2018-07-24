@@ -185,19 +185,6 @@ public class SettingsInitializer extends javax.swing.JFrame {
             throw new IllegalArgumentException(); //!!!!! idk if this is how to handle this this.
         }
     }
-    /**
-     * @param args the command line arguments
-     */
-    
-    /*
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SettingsInitializer().setVisible(true);
-            }
-        });
-    }
-    */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField entertainmentInput;
