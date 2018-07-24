@@ -9,6 +9,7 @@ public class ItsCommonCents {
         
         SettingsInitializer frame = new SettingsInitializer();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
     
