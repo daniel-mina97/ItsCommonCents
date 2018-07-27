@@ -9,8 +9,8 @@ import java.sql.Statement;
 
 public class DatabaseConnection {
     
-    private final static String DBURL = "jdbc:sqlite:CommonCents.db";
-    private final static String DATABASE_FILE_PATH = "CommonCents.db";
+    private final static String DATABASE_URL = "jdbc:sqlite:nbproject/private/CommonCents.db";
+    private final static String DATABASE_FILE_PATH = "nbproject/private/CommonCents.db";
     private final Connection connection;
     
     
@@ -24,7 +24,7 @@ public class DatabaseConnection {
     private Connection connectToDatabase() {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(DBURL);
+            conn = DriverManager.getConnection(DATABASE_URL);
         } catch(SQLException e) {
             System.out.println(e.getMessage());
         }
