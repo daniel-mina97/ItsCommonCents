@@ -1,7 +1,6 @@
 
 package DataManagement;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,15 +9,11 @@ import java.sql.Statement;
 public class DatabaseConnection {
     
     private final static String DATABASE_URL = "jdbc:sqlite:nbproject/private/CommonCents.db";
-    private final static String DATABASE_FILE_PATH = "nbproject/private/CommonCents.db";
     private final Connection connection;
-    
-    
+   
     public DatabaseConnection() {
         connection = connectToDatabase();
-        if(isDatabaseEmpty()) {
             createTables();
-        }
     }
             
     private Connection connectToDatabase() {
@@ -30,13 +25,7 @@ public class DatabaseConnection {
         }
         return conn;
     }
-    
-    private boolean isDatabaseEmpty() {
-        File database = new File(DATABASE_FILE_PATH);
-        return database.exists();
-    }
-    
-    private void createTables() {
+        
         createExpensesTable();
         createSpendingLimitsTable();
     }
