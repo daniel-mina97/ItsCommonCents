@@ -13,7 +13,7 @@ public class DatabaseConnection {
    
     public DatabaseConnection() {
         connection = connectToDatabase();
-            createTables();
+        createMissingTables();
     }
             
     private Connection connectToDatabase() {
@@ -26,6 +26,7 @@ public class DatabaseConnection {
         return conn;
     }
         
+    private void createMissingTables() {
         createExpensesTable();
         createSpendingLimitsTable();
     }
