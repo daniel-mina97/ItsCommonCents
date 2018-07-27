@@ -15,9 +15,7 @@ public class DatabaseConnection {
     
     
     public DatabaseConnection() {
-        System.out.println("Beginning of constructor");
         connection = connectToDatabase();
-        System.out.println("I connected");
         if(isDatabaseEmpty()) {
             createTables();
         }
