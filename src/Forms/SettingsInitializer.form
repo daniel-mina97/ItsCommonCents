@@ -26,50 +26,55 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="saveButton" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="entertainmentLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="groceriesLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="housingLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="yearlyIncomeLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="saveButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="entertainmentLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="groceriesLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="utilitiesLabel" min="-2" max="-2" attributes="0"/>
+                              <Component id="housingLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="utilitiesInput" max="32767" attributes="0"/>
+                              <Component id="groceriesInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="entertainmentInput" max="32767" attributes="0"/>
+                              <Component id="housingInput" min="-2" pref="174" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="yearlyIncomeInput" max="32767" attributes="0"/>
-                          <Component id="housingInput" max="32767" attributes="0"/>
-                          <Component id="groceriesInput" alignment="0" max="32767" attributes="0"/>
-                          <Component id="entertainmentInput" pref="174" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="transportationLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="transportationInput" min="-2" pref="175" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="transportationLabel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="transportationInput" min="-2" pref="175" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="miscellaneousLabel" min="-2" pref="105" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="miscellaneousInput" min="-2" pref="175" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="miscellaneousLabel" min="-2" pref="105" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="miscellaneousInput" min="-2" pref="175" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace pref="49" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="yearlyIncomeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="yearlyIncomeInput" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <Component id="titleLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="housingLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="housingInput" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="utilitiesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="utilitiesInput" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -91,24 +96,24 @@
                   <Component id="miscellaneousLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="miscellaneousInput" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="45" max="32767" attributes="0"/>
               <Component id="saveButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="yearlyIncomeLabel">
-      <Properties>
-        <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Yearly Income:"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="housingLabel">
       <Properties>
         <Property name="horizontalAlignment" type="int" value="4"/>
-        <Property name="text" type="java.lang.String" value="Housing/Rent:"/>
+        <Property name="text" type="java.lang.String" value="Housing/Rent"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="utilitiesLabel">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="4"/>
+        <Property name="text" type="java.lang.String" value="Utilities"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="groceriesLabel">
@@ -135,9 +140,13 @@
         <Property name="text" type="java.lang.String" value="Transportation:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="yearlyIncomeInput">
-    </Component>
     <Component class="javax.swing.JTextField" name="housingInput">
+    </Component>
+    <Component class="javax.swing.JTextField" name="utilitiesInput">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
+      </AuxValues>
     </Component>
     <Component class="javax.swing.JTextField" name="groceriesInput">
     </Component>
@@ -154,6 +163,14 @@
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="saveButtonMouseClicked"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="titleLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Grande" size="16" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Enter monthly budget for each spending category"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>
