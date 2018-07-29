@@ -2,10 +2,12 @@ package Forms;
 
 import ItsCommonCents.InputValidator;
 import ItsCommonCents.InputFilter;
+import DataManagement.DataHandler;
 import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.ArrayList;
+
 public class SettingsInitializer extends javax.swing.JFrame {
 
     private ArrayList<javax.swing.JTextField> componentList;
@@ -32,13 +34,13 @@ public class SettingsInitializer extends javax.swing.JFrame {
         miscellaneousLabel = new javax.swing.JLabel();
         transportationLabel = new javax.swing.JLabel();
         housingInput = new javax.swing.JTextField();
-        javax.swing.JTextField utilitiesInput = new javax.swing.JTextField();
-        groceriesInput = new javax.swing.JTextField();
+        utilitiesInput = new javax.swing.JTextField();
         entertainmentInput = new javax.swing.JTextField();
         transportationInput = new javax.swing.JTextField();
         miscellaneousInput = new javax.swing.JTextField();
         saveButton = new javax.swing.JButton();
         titleLabel = new javax.swing.JLabel();
+        groceriesInput = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Budget Settings");
@@ -90,9 +92,9 @@ public class SettingsInitializer extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(utilitiesInput)
-                                .addComponent(groceriesInput)
                                 .addComponent(entertainmentInput)
-                                .addComponent(housingInput, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(housingInput, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(groceriesInput)))
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(transportationLabel)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -142,53 +144,42 @@ public class SettingsInitializer extends javax.swing.JFrame {
 
     private void putInputComponentsInList() {
         componentList = new ArrayList();
-        componentList.add(yearlyIncomeInput);
         componentList.add(housingInput);
+        componentList.add(utilitiesInput);
         componentList.add(groceriesInput);
         componentList.add(entertainmentInput);
         componentList.add(transportationInput);
         componentList.add(miscellaneousInput);
     }
     
+    
     private void formatInputComponents() {
         for(javax.swing.JTextField textBox : componentList) {
             InputFilter.giveTextBoxFilterForDollars(textBox);
         }
     }
+
     
     private void saveButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveButtonMouseClicked
-        /* Needs to: make sure total budget is less than or equal to income
-        and transfer budget data between forms OR save directly to local database.
-        */
-        
-        //ALSO we need to clarify - is each budget category per month or per year?
-        
-        double yearlyIncome = returnValidDollarAmount(yearlyIncomeInput.getText());
-        double housing = returnValidDollarAmount(housingInput.getText());
-        double groceries = returnValidDollarAmount(groceriesInput.getText());
-        double entertainment = returnValidDollarAmount(entertainmentInput.getText());
-        double transport = returnValidDollarAmount(transportationInput.getText());
-        double misc = returnValidDollarAmount(miscellaneousInput.getText());
-        
-        double totalBudget = housing + groceries + entertainment + transport + misc;
-        
-        //!!!!!Bug: still computes income if an invalid character is entered
-        if(totalBudget <= yearlyIncome){
-            System.out.println("Within Income");
-            //save information to database (all individual budgets + yearly income)
-            //move onto next screen
-        }else{
-            System.out.println("Over Income");
-            //present error dialogue box to user
-        }      
+        DataHandler database = new DataHandler();        
+        for(int textBoxSequence = 0; textBoxSequence < componentList.size(); textBoxSequence++){
+            String userInput = componentList.get(textBoxSequence).getText();
+            try{
+                double dollarAmount = InputValidator.convertStringToDollars(userInput);
+                database.writeToSpendingLimits(textBoxSequence,dollarAmount);
+            } catch (ParseException e){
+                throw new IllegalArgumentException("Unable to write to database");
+            }
+        }
     }//GEN-LAST:event_saveButtonMouseClicked
 
+    
     private static double returnValidDollarAmount(String input) {
         try {
             return InputValidator.convertStringToDollars(input);
         } catch (ParseException ex) {
             Logger.getLogger(SettingsInitializer.class.getName()).log(Level.SEVERE, null, ex);
-            throw new IllegalArgumentException(); //!!!!! idk if this is how to handle this this.
+            throw new IllegalArgumentException("Can't convert String to double");
         }
     }
 
@@ -205,6 +196,7 @@ public class SettingsInitializer extends javax.swing.JFrame {
     private javax.swing.JLabel titleLabel;
     private javax.swing.JTextField transportationInput;
     private javax.swing.JLabel transportationLabel;
+    private javax.swing.JTextField utilitiesInput;
     private javax.swing.JLabel utilitiesLabel;
     // End of variables declaration//GEN-END:variables
 }

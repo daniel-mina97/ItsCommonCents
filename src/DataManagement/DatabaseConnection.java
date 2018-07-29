@@ -46,7 +46,7 @@ public class DatabaseConnection {
         executeSQL(sql);
     }
         
-    private void executeSQL(String query) {
+    public void executeSQL(String query) {
         try {
             Statement statement = connection.createStatement();
             statement.execute(query);
