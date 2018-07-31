@@ -40,12 +40,21 @@ public class MainFrame extends javax.swing.JFrame {
         mainViewTitle = new javax.swing.JLabel();
         alterBudgetPanel = new javax.swing.JPanel();
         alterBudgetTitle = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        housingCheckBox = new javax.swing.JCheckBox();
+        utilitiesCheckBox = new javax.swing.JCheckBox();
+        groceriesCheckBox = new javax.swing.JCheckBox();
+        transportationCheckBox = new javax.swing.JCheckBox();
+        entertainmentCheckBox = new javax.swing.JCheckBox();
+        miscCheckBox = new javax.swing.JCheckBox();
+        housingInput = new javax.swing.JTextField();
+        utilitiesInput = new javax.swing.JTextField();
+        groceriesInput = new javax.swing.JTextField();
+        entertainmentInput = new javax.swing.JTextField();
+        transportationInput = new javax.swing.JTextField();
+        categoriesLabel = new javax.swing.JLabel();
+        amountLabel = new javax.swing.JLabel();
+        miscInput = new javax.swing.JTextField();
+        submitButton = new javax.swing.JButton();
         addExpensesPanel = new javax.swing.JPanel();
         addExpensesTitle = new javax.swing.JLabel();
         editExpensesPanel = new javax.swing.JPanel();
@@ -87,7 +96,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(mainViewPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mainViewTitle)
-                .addContainerGap(325, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
 
         mainPanel.add(mainViewPanel, "mainView");
@@ -99,42 +108,109 @@ public class MainFrame extends javax.swing.JFrame {
         alterBudgetTitle.setText("Alter Budget Constraints");
         alterBudgetTitle.setName("alterBudgetTitle"); // NOI18N
 
-        jCheckBox1.setText("jCheckBox1");
-        jCheckBox1.setName("jCheckBox1"); // NOI18N
+        housingCheckBox.setText("Housing/Rent");
+        housingCheckBox.setName("housingCheckBox"); // NOI18N
 
-        jCheckBox2.setText("jCheckBox1");
-        jCheckBox2.setName("jCheckBox2"); // NOI18N
+        utilitiesCheckBox.setText("Utilities");
+        utilitiesCheckBox.setName("utilitiesCheckBox"); // NOI18N
+        utilitiesCheckBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                utilitiesCheckBoxActionPerformed(evt);
+            }
+        });
 
-        jCheckBox3.setText("jCheckBox1");
-        jCheckBox3.setName("jCheckBox3"); // NOI18N
+        groceriesCheckBox.setText("Groceries");
+        groceriesCheckBox.setName("groceriesCheckBox"); // NOI18N
 
-        jCheckBox4.setText("jCheckBox1");
-        jCheckBox4.setName("jCheckBox4"); // NOI18N
+        transportationCheckBox.setText("Transportation");
+        transportationCheckBox.setName("transportationCheckBox"); // NOI18N
 
-        jCheckBox5.setText("jCheckBox1");
-        jCheckBox5.setName("jCheckBox5"); // NOI18N
+        entertainmentCheckBox.setText("Entertainment");
+        entertainmentCheckBox.setName("entertainmentCheckBox"); // NOI18N
 
-        jCheckBox6.setText("jCheckBox1");
-        jCheckBox6.setName("jCheckBox6"); // NOI18N
+        miscCheckBox.setText("Miscellaneous");
+        miscCheckBox.setName("miscCheckBox"); // NOI18N
+
+        housingInput.setName("housingInput"); // NOI18N
+
+        utilitiesInput.setName("utilitiesInput"); // NOI18N
+
+        groceriesInput.setName("groceriesInput"); // NOI18N
+        groceriesInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                groceriesInputActionPerformed(evt);
+            }
+        });
+
+        entertainmentInput.setName("entertainmentInput"); // NOI18N
+
+        transportationInput.setName("transportationInput"); // NOI18N
+        transportationInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transportationInputActionPerformed(evt);
+            }
+        });
+
+        categoriesLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        categoriesLabel.setText("Category to alter");
+        categoriesLabel.setName("categoriesLabel"); // NOI18N
+
+        amountLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        amountLabel.setText("New Budget Amount");
+        amountLabel.setName("amountLabel"); // NOI18N
+
+        miscInput.setName("miscInput"); // NOI18N
+        miscInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miscInputActionPerformed(evt);
+            }
+        });
+
+        submitButton.setText("Submit Changes");
+        submitButton.setName("submitButton"); // NOI18N
 
         javax.swing.GroupLayout alterBudgetPanelLayout = new javax.swing.GroupLayout(alterBudgetPanel);
         alterBudgetPanel.setLayout(alterBudgetPanelLayout);
         alterBudgetPanelLayout.setHorizontalGroup(
             alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
-                .addContainerGap(185, Short.MAX_VALUE)
-                .addComponent(alterBudgetTitle)
-                .addGap(185, 185, 185))
             .addGroup(alterBudgetPanelLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
                 .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBox6)
-                    .addComponent(jCheckBox4)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox2)
-                    .addComponent(jCheckBox1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(alterBudgetPanelLayout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(housingCheckBox)
+                            .addComponent(miscCheckBox)
+                            .addComponent(transportationCheckBox)
+                            .addComponent(entertainmentCheckBox)
+                            .addComponent(groceriesCheckBox)
+                            .addComponent(utilitiesCheckBox)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(categoriesLabel)
+                        .addGap(15, 15, 15)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
+                        .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(housingInput, javax.swing.GroupLayout.DEFAULT_SIZE, 149, Short.MAX_VALUE)
+                            .addComponent(utilitiesInput)
+                            .addComponent(groceriesInput)
+                            .addComponent(entertainmentInput)
+                            .addComponent(transportationInput)
+                            .addComponent(miscInput))
+                        .addGap(72, 72, 72))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
+                        .addComponent(amountLabel)
+                        .addGap(90, 90, 90))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
+                        .addComponent(alterBudgetTitle)
+                        .addGap(185, 185, 185))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
+                        .addComponent(submitButton)
+                        .addGap(184, 184, 184))))
         );
         alterBudgetPanelLayout.setVerticalGroup(
             alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,18 +218,36 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(alterBudgetTitle)
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox1)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(categoriesLabel)
+                    .addComponent(amountLabel))
+                .addGap(19, 19, 19)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(housingCheckBox)
+                    .addComponent(housingInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox2)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(utilitiesCheckBox)
+                    .addComponent(utilitiesInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox3)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(groceriesCheckBox)
+                    .addComponent(groceriesInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox5)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(entertainmentCheckBox)
+                    .addComponent(entertainmentInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox4)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(transportationCheckBox)
+                    .addComponent(transportationInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox6)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(miscCheckBox)
+                    .addComponent(miscInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(submitButton)
+                .addGap(22, 22, 22))
         );
 
         mainPanel.add(alterBudgetPanel, "alterBudget");
@@ -179,7 +273,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(addExpensesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(addExpensesTitle)
-                .addContainerGap(325, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
 
         mainPanel.add(addExpensesPanel, "addExpenses");
@@ -205,7 +299,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(editExpensesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(editExpensesTitle)
-                .addContainerGap(325, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
 
         mainPanel.add(editExpensesPanel, "editExpenses");
@@ -231,7 +325,7 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(graphDataPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(graphDataTitle)
-                .addContainerGap(325, Short.MAX_VALUE))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
 
         mainPanel.add(graphDataPanel, "graphData");
@@ -326,7 +420,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(exitButton)
                 .addContainerGap())
         );
@@ -366,6 +460,22 @@ public class MainFrame extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "mainView");
     }//GEN-LAST:event_mainViewButtonActionPerformed
+
+    private void utilitiesCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utilitiesCheckBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_utilitiesCheckBoxActionPerformed
+
+    private void groceriesInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_groceriesInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_groceriesInputActionPerformed
+
+    private void transportationInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportationInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transportationInputActionPerformed
+
+    private void miscInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miscInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miscInputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -410,22 +520,31 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton alterBudgetButton;
     private javax.swing.JPanel alterBudgetPanel;
     private javax.swing.JLabel alterBudgetTitle;
+    private javax.swing.JLabel amountLabel;
+    private javax.swing.JLabel categoriesLabel;
     private javax.swing.JButton editExpensesButton;
     private javax.swing.JPanel editExpensesPanel;
     private javax.swing.JLabel editExpensesTitle;
+    private javax.swing.JCheckBox entertainmentCheckBox;
+    private javax.swing.JTextField entertainmentInput;
     private javax.swing.JButton exitButton;
     private javax.swing.JButton graphDataButton;
     private javax.swing.JPanel graphDataPanel;
     private javax.swing.JLabel graphDataTitle;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox groceriesCheckBox;
+    private javax.swing.JTextField groceriesInput;
+    private javax.swing.JCheckBox housingCheckBox;
+    private javax.swing.JTextField housingInput;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton mainViewButton;
     private javax.swing.JPanel mainViewPanel;
     private javax.swing.JLabel mainViewTitle;
+    private javax.swing.JCheckBox miscCheckBox;
+    private javax.swing.JTextField miscInput;
+    private javax.swing.JButton submitButton;
+    private javax.swing.JCheckBox transportationCheckBox;
+    private javax.swing.JTextField transportationInput;
+    private javax.swing.JCheckBox utilitiesCheckBox;
+    private javax.swing.JTextField utilitiesInput;
     // End of variables declaration//GEN-END:variables
 }
