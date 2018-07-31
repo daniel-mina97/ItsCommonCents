@@ -40,6 +40,12 @@ public class MainFrame extends javax.swing.JFrame {
         mainViewTitle = new javax.swing.JLabel();
         alterBudgetPanel = new javax.swing.JPanel();
         alterBudgetTitle = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
         addExpensesPanel = new javax.swing.JPanel();
         addExpensesTitle = new javax.swing.JLabel();
         editExpensesPanel = new javax.swing.JPanel();
@@ -60,6 +66,8 @@ public class MainFrame extends javax.swing.JFrame {
         mainPanel.setName("mainPanel"); // NOI18N
         mainPanel.setLayout(new java.awt.CardLayout());
 
+        mainViewPanel.setBackground(new java.awt.Color(255, 255, 255));
+        mainViewPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         mainViewPanel.setName("mainViewPanel"); // NOI18N
 
         mainViewTitle.setText("Current Budget");
@@ -70,7 +78,7 @@ public class MainFrame extends javax.swing.JFrame {
         mainViewPanelLayout.setHorizontalGroup(
             mainViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainViewPanelLayout.createSequentialGroup()
-                .addContainerGap(238, Short.MAX_VALUE)
+                .addContainerGap(210, Short.MAX_VALUE)
                 .addComponent(mainViewTitle)
                 .addGap(220, 220, 220))
         );
@@ -79,35 +87,79 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(mainViewPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(mainViewTitle)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addContainerGap(325, Short.MAX_VALUE))
         );
 
         mainPanel.add(mainViewPanel, "mainView");
 
+        alterBudgetPanel.setBackground(new java.awt.Color(255, 255, 255));
+        alterBudgetPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         alterBudgetPanel.setName("alterBudgetPanel"); // NOI18N
 
         alterBudgetTitle.setText("Alter Budget Constraints");
         alterBudgetTitle.setName("alterBudgetTitle"); // NOI18N
+
+        jCheckBox1.setText("jCheckBox1");
+        jCheckBox1.setName("jCheckBox1"); // NOI18N
+
+        jCheckBox2.setText("jCheckBox1");
+        jCheckBox2.setName("jCheckBox2"); // NOI18N
+
+        jCheckBox3.setText("jCheckBox1");
+        jCheckBox3.setName("jCheckBox3"); // NOI18N
+
+        jCheckBox4.setText("jCheckBox1");
+        jCheckBox4.setName("jCheckBox4"); // NOI18N
+
+        jCheckBox5.setText("jCheckBox1");
+        jCheckBox5.setName("jCheckBox5"); // NOI18N
+
+        jCheckBox6.setText("jCheckBox1");
+        jCheckBox6.setName("jCheckBox6"); // NOI18N
 
         javax.swing.GroupLayout alterBudgetPanelLayout = new javax.swing.GroupLayout(alterBudgetPanel);
         alterBudgetPanel.setLayout(alterBudgetPanelLayout);
         alterBudgetPanelLayout.setHorizontalGroup(
             alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
-                .addContainerGap(213, Short.MAX_VALUE)
+                .addContainerGap(185, Short.MAX_VALUE)
                 .addComponent(alterBudgetTitle)
                 .addGap(185, 185, 185))
+            .addGroup(alterBudgetPanelLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBox6)
+                    .addComponent(jCheckBox4)
+                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBox1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         alterBudgetPanelLayout.setVerticalGroup(
             alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(alterBudgetPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(alterBudgetTitle)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBox1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox6)
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         mainPanel.add(alterBudgetPanel, "alterBudget");
 
+        addExpensesPanel.setBackground(new java.awt.Color(255, 255, 255));
+        addExpensesPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         addExpensesPanel.setName("addExpensesPanel"); // NOI18N
 
         addExpensesTitle.setText("Add Expenses");
@@ -117,24 +169,26 @@ public class MainFrame extends javax.swing.JFrame {
         addExpensesPanel.setLayout(addExpensesPanelLayout);
         addExpensesPanelLayout.setHorizontalGroup(
             addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
-                .addContainerGap(240, Short.MAX_VALUE)
+            .addGroup(addExpensesPanelLayout.createSequentialGroup()
+                .addGap(217, 217, 217)
                 .addComponent(addExpensesTitle)
-                .addGap(224, 224, 224))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
         addExpensesPanelLayout.setVerticalGroup(
             addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addExpensesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(addExpensesTitle)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addContainerGap(325, Short.MAX_VALUE))
         );
 
         mainPanel.add(addExpensesPanel, "addExpenses");
 
+        editExpensesPanel.setBackground(new java.awt.Color(255, 255, 255));
+        editExpensesPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         editExpensesPanel.setName("editExpensesPanel"); // NOI18N
 
-        editExpensesTitle.setText("Edit Expenses Title");
+        editExpensesTitle.setText("Edit Expenses");
         editExpensesTitle.setName("editExpensesTitle"); // NOI18N
 
         javax.swing.GroupLayout editExpensesPanelLayout = new javax.swing.GroupLayout(editExpensesPanel);
@@ -142,20 +196,22 @@ public class MainFrame extends javax.swing.JFrame {
         editExpensesPanelLayout.setHorizontalGroup(
             editExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editExpensesPanelLayout.createSequentialGroup()
-                .addContainerGap(223, Short.MAX_VALUE)
+                .addContainerGap(220, Short.MAX_VALUE)
                 .addComponent(editExpensesTitle)
-                .addGap(210, 210, 210))
+                .addGap(217, 217, 217))
         );
         editExpensesPanelLayout.setVerticalGroup(
             editExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editExpensesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(editExpensesTitle)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addContainerGap(325, Short.MAX_VALUE))
         );
 
         mainPanel.add(editExpensesPanel, "editExpenses");
 
+        graphDataPanel.setBackground(new java.awt.Color(255, 255, 255));
+        graphDataPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         graphDataPanel.setName("graphDataPanel"); // NOI18N
 
         graphDataTitle.setText("Graph of Data");
@@ -166,16 +222,16 @@ public class MainFrame extends javax.swing.JFrame {
         graphDataPanelLayout.setHorizontalGroup(
             graphDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, graphDataPanelLayout.createSequentialGroup()
-                .addContainerGap(237, Short.MAX_VALUE)
+                .addContainerGap(220, Short.MAX_VALUE)
                 .addComponent(graphDataTitle)
-                .addGap(228, 228, 228))
+                .addGap(217, 217, 217))
         );
         graphDataPanelLayout.setVerticalGroup(
             graphDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(graphDataPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(graphDataTitle)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addContainerGap(325, Short.MAX_VALUE))
         );
 
         mainPanel.add(graphDataPanel, "graphData");
@@ -238,19 +294,19 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
+                        .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addExpensesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(alterBudgetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(editExpensesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(graphDataButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(mainViewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(64, 64, 64)
+                        .addGap(43, 43, 43)
                         .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(exitButton)))
-                .addContainerGap())
+                .addGap(32, 32, 32))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,7 +326,7 @@ public class MainFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(exitButton)
                 .addContainerGap())
         );
@@ -361,6 +417,12 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton graphDataButton;
     private javax.swing.JPanel graphDataPanel;
     private javax.swing.JLabel graphDataTitle;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JButton mainViewButton;
     private javax.swing.JPanel mainViewPanel;
