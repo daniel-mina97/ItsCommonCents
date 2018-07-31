@@ -5,6 +5,8 @@
  */
 package Forms;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author Ella
@@ -33,69 +35,199 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        mainPanel = new javax.swing.JPanel();
+        mainViewPanel = new javax.swing.JPanel();
+        mainViewTitle = new javax.swing.JLabel();
+        alterBudgetPanel = new javax.swing.JPanel();
+        alterBudgetTitle = new javax.swing.JLabel();
+        addExpensesPanel = new javax.swing.JPanel();
+        addExpensesTitle = new javax.swing.JLabel();
+        editExpensesPanel = new javax.swing.JPanel();
+        editExpensesTitle = new javax.swing.JLabel();
+        graphDataPanel = new javax.swing.JPanel();
+        graphDataTitle = new javax.swing.JLabel();
+        exitButton = new javax.swing.JButton();
+        alterBudgetButton = new javax.swing.JButton();
+        graphDataButton = new javax.swing.JButton();
+        addExpensesButton = new javax.swing.JButton();
+        editExpensesButton = new javax.swing.JButton();
+        mainViewButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("MainFrame");
         setName("Form"); // NOI18N
 
-        jPanel1.setName("mainPanel"); // NOI18N
+        mainPanel.setName("mainPanel"); // NOI18N
+        mainPanel.setLayout(new java.awt.CardLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 514, Short.MAX_VALUE)
+        mainViewPanel.setName("mainViewPanel"); // NOI18N
+
+        mainViewTitle.setText("Current Budget");
+        mainViewTitle.setName("mainViewTitle"); // NOI18N
+
+        javax.swing.GroupLayout mainViewPanelLayout = new javax.swing.GroupLayout(mainViewPanel);
+        mainViewPanel.setLayout(mainViewPanelLayout);
+        mainViewPanelLayout.setHorizontalGroup(
+            mainViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainViewPanelLayout.createSequentialGroup()
+                .addContainerGap(238, Short.MAX_VALUE)
+                .addComponent(mainViewTitle)
+                .addGap(220, 220, 220))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 337, Short.MAX_VALUE)
+        mainViewPanelLayout.setVerticalGroup(
+            mainViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainViewPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mainViewTitle)
+                .addContainerGap(315, Short.MAX_VALUE))
         );
 
-        jButton1.setText("Exit");
-        jButton1.setToolTipText("");
-        jButton1.setName("jButton1"); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        mainPanel.add(mainViewPanel, "mainView");
+
+        alterBudgetPanel.setName("alterBudgetPanel"); // NOI18N
+
+        alterBudgetTitle.setText("Alter Budget Constraints");
+        alterBudgetTitle.setName("alterBudgetTitle"); // NOI18N
+
+        javax.swing.GroupLayout alterBudgetPanelLayout = new javax.swing.GroupLayout(alterBudgetPanel);
+        alterBudgetPanel.setLayout(alterBudgetPanelLayout);
+        alterBudgetPanelLayout.setHorizontalGroup(
+            alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
+                .addContainerGap(213, Short.MAX_VALUE)
+                .addComponent(alterBudgetTitle)
+                .addGap(185, 185, 185))
+        );
+        alterBudgetPanelLayout.setVerticalGroup(
+            alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(alterBudgetPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(alterBudgetTitle)
+                .addContainerGap(315, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(alterBudgetPanel, "alterBudget");
+
+        addExpensesPanel.setName("addExpensesPanel"); // NOI18N
+
+        addExpensesTitle.setText("Add Expenses");
+        addExpensesTitle.setName("addExpensesTitle"); // NOI18N
+
+        javax.swing.GroupLayout addExpensesPanelLayout = new javax.swing.GroupLayout(addExpensesPanel);
+        addExpensesPanel.setLayout(addExpensesPanelLayout);
+        addExpensesPanelLayout.setHorizontalGroup(
+            addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
+                .addContainerGap(240, Short.MAX_VALUE)
+                .addComponent(addExpensesTitle)
+                .addGap(224, 224, 224))
+        );
+        addExpensesPanelLayout.setVerticalGroup(
+            addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addExpensesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addExpensesTitle)
+                .addContainerGap(315, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(addExpensesPanel, "addExpenses");
+
+        editExpensesPanel.setName("editExpensesPanel"); // NOI18N
+
+        editExpensesTitle.setText("Edit Expenses Title");
+        editExpensesTitle.setName("editExpensesTitle"); // NOI18N
+
+        javax.swing.GroupLayout editExpensesPanelLayout = new javax.swing.GroupLayout(editExpensesPanel);
+        editExpensesPanel.setLayout(editExpensesPanelLayout);
+        editExpensesPanelLayout.setHorizontalGroup(
+            editExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editExpensesPanelLayout.createSequentialGroup()
+                .addContainerGap(223, Short.MAX_VALUE)
+                .addComponent(editExpensesTitle)
+                .addGap(210, 210, 210))
+        );
+        editExpensesPanelLayout.setVerticalGroup(
+            editExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editExpensesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(editExpensesTitle)
+                .addContainerGap(315, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(editExpensesPanel, "editExpenses");
+
+        graphDataPanel.setName("graphDataPanel"); // NOI18N
+
+        graphDataTitle.setText("Graph of Data");
+        graphDataTitle.setName("graphDataTitle"); // NOI18N
+
+        javax.swing.GroupLayout graphDataPanelLayout = new javax.swing.GroupLayout(graphDataPanel);
+        graphDataPanel.setLayout(graphDataPanelLayout);
+        graphDataPanelLayout.setHorizontalGroup(
+            graphDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, graphDataPanelLayout.createSequentialGroup()
+                .addContainerGap(237, Short.MAX_VALUE)
+                .addComponent(graphDataTitle)
+                .addGap(228, 228, 228))
+        );
+        graphDataPanelLayout.setVerticalGroup(
+            graphDataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(graphDataPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(graphDataTitle)
+                .addContainerGap(315, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(graphDataPanel, "graphData");
+
+        exitButton.setText("Exit");
+        exitButton.setToolTipText("");
+        exitButton.setName("exitButton"); // NOI18N
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                exitButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Alter Budget Contraints");
-        jButton2.setName("jButton2"); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        alterBudgetButton.setText("Alter Budget Contraints");
+        alterBudgetButton.setName("alterBudgetButton"); // NOI18N
+        alterBudgetButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                alterBudgetButtonActionPerformed(evt);
             }
         });
 
-        jButton3.setText("View Data as Graph");
-        jButton3.setActionCommand("Add Expenditures");
-        jButton3.setName("jButton3"); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        graphDataButton.setText("View Data as Graph");
+        graphDataButton.setActionCommand("Add Expenditures");
+        graphDataButton.setName("graphDataButton"); // NOI18N
+        graphDataButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                graphDataButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Add Expenditures");
-        jButton4.setName("jButton4"); // NOI18N
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        addExpensesButton.setText("Add Expenditures");
+        addExpensesButton.setName("addExpensesButton"); // NOI18N
+        addExpensesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                addExpensesButtonActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Edit Expenditures");
-        jButton5.setName("jButton5"); // NOI18N
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        editExpensesButton.setText("Edit Expenditures");
+        editExpensesButton.setName("editExpensesButton"); // NOI18N
+        editExpensesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                editExpensesButtonActionPerformed(evt);
+            }
+        });
+
+        mainViewButton.setText("Main Screen");
+        mainViewButton.setActionCommand("Add Expenditures");
+        mainViewButton.setName("mainViewButton"); // NOI18N
+        mainViewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainViewButtonActionPerformed(evt);
             }
         });
 
@@ -104,67 +236,80 @@ public class MainFrame extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(addExpensesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(alterBudgetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editExpensesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(graphDataButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mainViewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(64, 64, 64)
+                        .addComponent(mainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(exitButton)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(alterBudgetButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(22, 22, 22)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(addExpensesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(editExpensesButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(graphDataButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(mainViewButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                        .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(exitButton)
                 .addContainerGap())
         );
 
-        jPanel1.getAccessibleContext().setAccessibleName("mainPanel");
+        mainPanel.getAccessibleContext().setAccessibleName("mainPanel");
 
         getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void alterBudgetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterBudgetButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "alterBudget");
+    }//GEN-LAST:event_alterBudgetButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void graphDataButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graphDataButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "graphData");
+    }//GEN-LAST:event_graphDataButtonActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void addExpensesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addExpensesButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "addExpenses");
+    }//GEN-LAST:event_addExpensesButtonActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void editExpensesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editExpensesButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "editExpenses");
+    }//GEN-LAST:event_editExpensesButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitButtonActionPerformed
+
+    private void mainViewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainViewButtonActionPerformed
+        CardLayout card = (CardLayout)mainPanel.getLayout();
+        card.show(mainPanel, "mainView");
+    }//GEN-LAST:event_mainViewButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,11 +348,22 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton addExpensesButton;
+    private javax.swing.JPanel addExpensesPanel;
+    private javax.swing.JLabel addExpensesTitle;
+    private javax.swing.JButton alterBudgetButton;
+    private javax.swing.JPanel alterBudgetPanel;
+    private javax.swing.JLabel alterBudgetTitle;
+    private javax.swing.JButton editExpensesButton;
+    private javax.swing.JPanel editExpensesPanel;
+    private javax.swing.JLabel editExpensesTitle;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JButton graphDataButton;
+    private javax.swing.JPanel graphDataPanel;
+    private javax.swing.JLabel graphDataTitle;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JButton mainViewButton;
+    private javax.swing.JPanel mainViewPanel;
+    private javax.swing.JLabel mainViewTitle;
     // End of variables declaration//GEN-END:variables
 }
