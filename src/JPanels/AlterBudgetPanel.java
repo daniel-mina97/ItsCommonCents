@@ -5,9 +5,13 @@
  */
 package JPanels;
 
+import DataManagement.DataHandler;
 import ItsCommonCents.InputFilter;
-import java.util.ArrayList;
+import ItsCommonCents.InputValidator;
+import java.text.ParseException;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -37,6 +41,16 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
     private void formatInputComponents(){
         for(javax.swing.JTextField textBox: categories.values()){
             InputFilter.giveTextBoxFilterForDollars(textBox);
+        }
+    }
+    
+    private double convertUserInput(javax.swing.JTextField input){
+        try {
+            double dollarAmount = InputValidator.convertStringToDollars(input.getText());
+            return dollarAmount;
+        } catch (ParseException ex) {
+             Logger.getLogger(AlterBudgetPanel.class.getName()).log(Level.SEVERE, null, ex);
+             throw new IllegalArgumentException("Unable to convert string to double");
         }
     }
 
@@ -201,10 +215,17 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
     //private HashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
     
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        DataHandler database = new DataHandler();
+        int categoryCount = 0; //prob a better way to handle this
+        
         for(javax.swing.JCheckBox checkBox: categories.keySet()){
+            categoryCount++;
             if(checkBox.isSelected()){
-                //add value to database
+                javax.swing.JTextField userInput = categories.get(checkBox);
+                double dollarInput = convertUserInput(userInput);
+                database.writeToSpendingLimits(categoryCount, dollarInput);
                 checkBox.setSelected(false);
+                userInput.setText("");
             }
         }
     }//GEN-LAST:event_submitButtonActionPerformed
