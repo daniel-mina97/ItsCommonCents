@@ -20,4 +20,12 @@ public class DataHandler {
                 + amount + ");";
         databaseConnection.executeSQL(sql);
     }
+    
+    public void writeToExpenses(String date, int category, double amountSpent){
+        String sql = "INSERT INTO expenses VALUES("
+                + date + ", "
+                + category + ", "
+                + amountSpent + ");";
+        databaseConnection.executeSQL(sql);
+    }
 }
