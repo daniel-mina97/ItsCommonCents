@@ -5,17 +5,39 @@
  */
 package JPanels;
 
+import ItsCommonCents.InputFilter;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
 /**
  *
  * @author Ella
  */
 public class AlterBudgetPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AlterBudgetPanel
-     */
+    private HashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
+    
     public AlterBudgetPanel() {
         initComponents();
+        categories = new HashMap<javax.swing.JCheckBox, javax.swing.JTextField>();
+        initMap();
+        formatInputComponents();
+    }
+    
+    private void initMap(){
+        categories.put(housingCheckBox, housingInput);
+        categories.put(utilitiesCheckBox, utilitiesInput);
+        categories.put(groceriesCheckBox, groceriesInput);
+        categories.put(entertainmentCheckBox, entertainmentInput);
+        categories.put(transportationCheckBox, transportationInput);
+        categories.put(miscCheckBox, miscInput);
+    }
+    
+    private void formatInputComponents(){
+        for(javax.swing.JTextField textBox: categories.values()){
+            InputFilter.giveTextBoxFilterForDollars(textBox);
+        }
     }
 
     /**
@@ -53,11 +75,6 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
         housingCheckBox.setText("Housing/Rent");
 
         utilitiesCheckBox.setText("Utilities");
-        utilitiesCheckBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                utilitiesCheckBoxActionPerformed(evt);
-            }
-        });
 
         groceriesCheckBox.setText("Groceries");
 
@@ -67,52 +84,37 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
 
         miscCheckBox.setText("Miscellaneous");
 
-        groceriesInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                groceriesInputActionPerformed(evt);
-            }
-        });
-
-        transportationInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transportationInputActionPerformed(evt);
-            }
-        });
-
         categoriesLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         categoriesLabel.setText("Category to alter");
 
         amountLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         amountLabel.setText("New Budget Amount");
 
-        miscInput.addActionListener(new java.awt.event.ActionListener() {
+        submitButton.setText("Submit Changes");
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miscInputActionPerformed(evt);
+                submitButtonActionPerformed(evt);
             }
         });
-
-        submitButton.setText("Submit Changes");
 
         javax.swing.GroupLayout alterBudgetPanelLayout = new javax.swing.GroupLayout(alterBudgetPanel);
         alterBudgetPanel.setLayout(alterBudgetPanelLayout);
         alterBudgetPanelLayout.setHorizontalGroup(
             alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(alterBudgetPanelLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
                 .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(alterBudgetPanelLayout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(housingCheckBox)
-                            .addComponent(miscCheckBox)
-                            .addComponent(transportationCheckBox)
-                            .addComponent(entertainmentCheckBox)
-                            .addComponent(groceriesCheckBox)
-                            .addComponent(utilitiesCheckBox)))
+                    .addComponent(housingCheckBox)
+                    .addComponent(miscCheckBox)
+                    .addComponent(transportationCheckBox)
+                    .addComponent(entertainmentCheckBox)
+                    .addComponent(groceriesCheckBox)
+                    .addComponent(utilitiesCheckBox)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
-                        .addContainerGap()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(categoriesLabel)
                         .addGap(15, 15, 15)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
                         .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -127,7 +129,7 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
                         .addComponent(amountLabel)
                         .addGap(90, 90, 90))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(185, Short.MAX_VALUE)
                 .addGroup(alterBudgetPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
                         .addComponent(alterBudgetTitle)
@@ -196,22 +198,16 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void utilitiesCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_utilitiesCheckBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_utilitiesCheckBoxActionPerformed
-
-    private void groceriesInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_groceriesInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_groceriesInputActionPerformed
-
-    private void transportationInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportationInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_transportationInputActionPerformed
-
-    private void miscInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miscInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_miscInputActionPerformed
-
+    //private HashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
+    
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        for(javax.swing.JCheckBox checkBox: categories.keySet()){
+            if(checkBox.isSelected()){
+                //add value to database
+                checkBox.setSelected(false);
+            }
+        }
+    }//GEN-LAST:event_submitButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel alterBudgetPanel;
