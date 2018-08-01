@@ -2,7 +2,6 @@ package ItsCommonCents;
 
 import DataManagement.DatabaseConnection;
 import Forms.MainFrame;
-import Forms.SettingsInitializer;
 import javax.swing.JFrame;
 
 public class ItsCommonCents {

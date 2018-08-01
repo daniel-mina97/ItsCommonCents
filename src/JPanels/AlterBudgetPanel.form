@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <EmptySpace min="0" pref="526" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="alterBudgetPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <EmptySpace min="0" pref="371" max="32767" attributes="0"/>
+          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Component id="alterBudgetPanel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="alterBudgetPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+            <LineBorder/>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="housingCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="miscCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="transportationCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="entertainmentCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="groceriesCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="utilitiesCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="categoriesLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="71" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="housingInput" alignment="0" pref="149" max="32767" attributes="0"/>
+                              <Component id="utilitiesInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="groceriesInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="entertainmentInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="transportationInput" alignment="0" max="32767" attributes="0"/>
+                              <Component id="miscInput" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="amountLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="alterBudgetTitle" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="184" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="alterBudgetTitle" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="categoriesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="amountLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="housingCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="housingInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="utilitiesCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="utilitiesInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="groceriesCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="groceriesInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="entertainmentCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="entertainmentInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="transportationCheckBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="transportationInput" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="miscCheckBox" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="miscInput" alignment="1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="29" max="32767" attributes="0"/>
+                  <Component id="submitButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="alterBudgetTitle">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Alter Budget Constraints"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="housingCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Housing/Rent"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="utilitiesCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Utilities"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="utilitiesCheckBoxActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="groceriesCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Groceries"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="transportationCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Transportation"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="entertainmentCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Entertainment"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="miscCheckBox">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Miscellaneous"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="housingInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="utilitiesInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="groceriesInput">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="groceriesInputActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="entertainmentInput">
+        </Component>
+        <Component class="javax.swing.JTextField" name="transportationInput">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="transportationInputActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="categoriesLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Grande" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Category to alter"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="amountLabel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Lucida Grande" size="11" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="New Budget Amount"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="miscInput">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miscInputActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="submitButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Submit Changes"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
