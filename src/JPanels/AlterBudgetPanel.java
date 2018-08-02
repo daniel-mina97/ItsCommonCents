@@ -125,7 +125,6 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
                     .addComponent(groceriesCheckBox)
                     .addComponent(utilitiesCheckBox)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, alterBudgetPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(categoriesLabel)
                         .addGap(15, 15, 15)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

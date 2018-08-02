@@ -27,35 +27,58 @@ public class AddExpensesPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        addExpensesPanel = new javax.swing.JPanel();
         addExpensesLabel = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
-        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        setName(""); // NOI18N
-        setPreferredSize(new java.awt.Dimension(426, 371));
+        setPreferredSize(new java.awt.Dimension(526, 371));
+
+        addExpensesPanel.setBackground(new java.awt.Color(255, 255, 255));
+        addExpensesPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         addExpensesLabel.setText("Add Expenses");
+
+        javax.swing.GroupLayout addExpensesPanelLayout = new javax.swing.GroupLayout(addExpensesPanel);
+        addExpensesPanel.setLayout(addExpensesPanelLayout);
+        addExpensesPanelLayout.setHorizontalGroup(
+            addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addExpensesPanelLayout.createSequentialGroup()
+                .addGap(208, 208, 208)
+                .addComponent(addExpensesLabel)
+                .addContainerGap(228, Short.MAX_VALUE))
+        );
+        addExpensesPanelLayout.setVerticalGroup(
+            addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(addExpensesPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addExpensesLabel)
+                .addContainerGap(347, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(210, 210, 210)
-                .addComponent(addExpensesLabel)
-                .addContainerGap(226, Short.MAX_VALUE))
+            .addGap(0, 541, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 7, Short.MAX_VALUE)
+                    .addComponent(addExpensesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 8, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(addExpensesLabel)
-                .addContainerGap(347, Short.MAX_VALUE))
+            .addGap(0, 382, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 5, Short.MAX_VALUE)
+                    .addComponent(addExpensesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 6, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addExpensesLabel;
+    private javax.swing.JPanel addExpensesPanel;
     // End of variables declaration//GEN-END:variables
 }
