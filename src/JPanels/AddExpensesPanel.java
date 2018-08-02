@@ -5,6 +5,10 @@
  */
 package JPanels;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  *
  * @author Ella
@@ -16,6 +20,13 @@ public class AddExpensesPanel extends javax.swing.JPanel {
      */
     public AddExpensesPanel() {
         initComponents();
+        getDate();
+    }
+    
+    private String getDate(){
+        DateFormat df = new SimpleDateFormat("YYYY-MM-dd");
+        Date currentDate = new Date();
+        return df.format(currentDate);
     }
 
     /**
@@ -29,6 +40,12 @@ public class AddExpensesPanel extends javax.swing.JPanel {
 
         addExpensesPanel = new javax.swing.JPanel();
         addExpensesLabel = new javax.swing.JLabel();
+        categoryComboBox = new javax.swing.JComboBox<>();
+        amountSpentLabel = new javax.swing.JLabel();
+        amountSpentInput = new javax.swing.JTextField();
+        categoryLabel = new javax.swing.JLabel();
+        submitButton = new javax.swing.JButton();
+        addField1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(526, 371));
 
@@ -37,21 +54,75 @@ public class AddExpensesPanel extends javax.swing.JPanel {
 
         addExpensesLabel.setText("Add Expenses");
 
+        categoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT ONE", "Housing", "Utilities", "Groceries", "Entertainment", "Transportation", "Misc." }));
+
+        amountSpentLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        amountSpentLabel.setText("Amount Spent");
+
+        amountSpentInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                amountSpentInputActionPerformed(evt);
+            }
+        });
+
+        categoryLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
+        categoryLabel.setText("Category");
+
+        submitButton.setText("Submit");
+
+        addField1.setBackground(new java.awt.Color(153, 153, 153));
+        addField1.setText("+");
+        addField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addField1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout addExpensesPanelLayout = new javax.swing.GroupLayout(addExpensesPanel);
         addExpensesPanel.setLayout(addExpensesPanelLayout);
         addExpensesPanelLayout.setHorizontalGroup(
             addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addExpensesPanelLayout.createSequentialGroup()
-                .addGap(208, 208, 208)
-                .addComponent(addExpensesLabel)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE)
+                .addGroup(addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
+                        .addComponent(addExpensesLabel)
+                        .addGap(213, 213, 213))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
+                        .addComponent(categoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(amountSpentInput, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
+                        .addComponent(categoryLabel)
+                        .addGap(141, 141, 141)
+                        .addComponent(amountSpentLabel)
+                        .addGap(101, 101, 101))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
+                        .addComponent(submitButton)
+                        .addGap(197, 197, 197))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
+                        .addComponent(addField1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30))))
         );
         addExpensesPanelLayout.setVerticalGroup(
             addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addExpensesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(addExpensesLabel)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountSpentLabel)
+                    .addComponent(categoryLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(categoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(amountSpentInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addComponent(addField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                .addComponent(submitButton)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -76,9 +147,23 @@ public class AddExpensesPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void amountSpentInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountSpentInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_amountSpentInputActionPerformed
+
+    private void addField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addField1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addExpensesLabel;
     private javax.swing.JPanel addExpensesPanel;
+    private javax.swing.JButton addField1;
+    private javax.swing.JTextField amountSpentInput;
+    private javax.swing.JLabel amountSpentLabel;
+    private javax.swing.JComboBox<String> categoryComboBox;
+    private javax.swing.JLabel categoryLabel;
+    private javax.swing.JButton submitButton;
     // End of variables declaration//GEN-END:variables
 }
