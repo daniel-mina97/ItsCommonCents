@@ -8,10 +8,8 @@ package JPanels;
 import DataManagement.DataHandler;
 import ItsCommonCents.InputFilter;
 import ItsCommonCents.InputValidator;
-import java.text.ParseException;
-import java.util.HashMap;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.LinkedHashMap;
+
 
 
 /**
@@ -20,11 +18,11 @@ import java.util.logging.Logger;
  */
 public class AlterBudgetPanel extends javax.swing.JPanel {
 
-    private HashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
+    private LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
     
     public AlterBudgetPanel() {
         initComponents();
-        categories = new HashMap<javax.swing.JCheckBox, javax.swing.JTextField>();
+        categories = new LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField>();
         initMap();
         formatInputComponents();
     }
@@ -209,7 +207,6 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
         int categoryCount = 0; //prob a better way to handle this
         
         for(javax.swing.JCheckBox checkBox: categories.keySet()){
-            categoryCount++;
             if(checkBox.isSelected()){
                 javax.swing.JTextField userInput = categories.get(checkBox);
                 double dollarInput = InputValidator.convertUserInput(userInput);
@@ -217,6 +214,7 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
                 checkBox.setSelected(false);
                 userInput.setText("");
             }
+            categoryCount++;
         }
     }//GEN-LAST:event_submitButtonActionPerformed
 
