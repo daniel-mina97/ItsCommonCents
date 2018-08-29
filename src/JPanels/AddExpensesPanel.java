@@ -5,6 +5,9 @@
  */
 package JPanels;
 
+import DataManagement.DataHandler;
+import ItsCommonCents.InputFilter;
+import ItsCommonCents.InputValidator;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,17 +18,18 @@ import java.util.Date;
  */
 public class AddExpensesPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form AddExpensesPanel
-     */
+    DataHandler database;
+    
     public AddExpensesPanel() {
         initComponents();
-        getDate();
+        database = new DataHandler();
+        InputFilter.giveTextBoxFilterForDollars(amountSpentInput);
     }
     
     private String getDate(){
         DateFormat df = new SimpleDateFormat("YYYY-MM-dd");
         Date currentDate = new Date();
+        System.out.println(df.format(currentDate));
         return df.format(currentDate);
     }
 
@@ -45,7 +49,6 @@ public class AddExpensesPanel extends javax.swing.JPanel {
         amountSpentInput = new javax.swing.JTextField();
         categoryLabel = new javax.swing.JLabel();
         submitButton = new javax.swing.JButton();
-        addField1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(526, 371));
 
@@ -59,22 +62,13 @@ public class AddExpensesPanel extends javax.swing.JPanel {
         amountSpentLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         amountSpentLabel.setText("Amount Spent");
 
-        amountSpentInput.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                amountSpentInputActionPerformed(evt);
-            }
-        });
-
         categoryLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         categoryLabel.setText("Category");
 
         submitButton.setText("Submit");
-
-        addField1.setBackground(new java.awt.Color(153, 153, 153));
-        addField1.setText("+");
-        addField1.addActionListener(new java.awt.event.ActionListener() {
+        submitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addField1ActionPerformed(evt);
+                submitButtonActionPerformed(evt);
             }
         });
 
@@ -100,10 +94,7 @@ public class AddExpensesPanel extends javax.swing.JPanel {
                         .addGap(101, 101, 101))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
                         .addComponent(submitButton)
-                        .addGap(197, 197, 197))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addExpensesPanelLayout.createSequentialGroup()
-                        .addComponent(addField1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30))))
+                        .addGap(197, 197, 197))))
         );
         addExpensesPanelLayout.setVerticalGroup(
             addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,9 +109,7 @@ public class AddExpensesPanel extends javax.swing.JPanel {
                 .addGroup(addExpensesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(categoryComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(amountSpentInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(4, 4, 4)
-                .addComponent(addField1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 228, Short.MAX_VALUE)
                 .addComponent(submitButton)
                 .addContainerGap())
         );
@@ -129,37 +118,44 @@ public class AddExpensesPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 541, Short.MAX_VALUE)
+            .addGap(0, 526, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 7, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(addExpensesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 8, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 382, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 5, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(addExpensesPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 6, Short.MAX_VALUE)))
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void amountSpentInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_amountSpentInputActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_amountSpentInputActionPerformed
+    private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
+        int selectedCategoryIndex = categoryComboBox.getSelectedIndex();
+        double dollarInput = InputValidator.convertUserInput(amountSpentInput);
+        if (inputCheck(selectedCategoryIndex, dollarInput)){
+            String currentDate = getDate();
+            System.out.println("Current Date: " + currentDate);
+            database.writeToExpenses(currentDate, selectedCategoryIndex - 1, dollarInput);
+            categoryComboBox.setSelectedIndex(0);
+            amountSpentInput.setText("");
+        }
+        
+    }//GEN-LAST:event_submitButtonActionPerformed
 
-    private void addField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_addField1ActionPerformed
-
+    private boolean inputCheck(int selectedIndex, double dollarInput){
+        return selectedIndex != 0 && dollarInput != 0;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addExpensesLabel;
     private javax.swing.JPanel addExpensesPanel;
-    private javax.swing.JButton addField1;
     private javax.swing.JTextField amountSpentInput;
     private javax.swing.JLabel amountSpentLabel;
     private javax.swing.JComboBox<String> categoryComboBox;

@@ -1,8 +1,11 @@
 package ItsCommonCents;
 
+import JPanels.AlterBudgetPanel;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class InputValidator {
     
@@ -18,6 +21,16 @@ public class InputValidator {
             return inputToNumber.doubleValue();
         } catch (ParseException e) {
            throw new IllegalArgumentException("Can't convert String to double");
+        }
+    }
+    
+    public static double convertUserInput(javax.swing.JTextField input){
+        try {
+            double dollarAmount = InputValidator.convertStringToDollars(input.getText());
+            return dollarAmount;
+        } catch (ParseException ex) {
+             Logger.getLogger(AlterBudgetPanel.class.getName()).log(Level.SEVERE, null, ex);
+             throw new IllegalArgumentException("Unable to convert string to double");
         }
     }
 }

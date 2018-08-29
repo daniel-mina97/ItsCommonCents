@@ -44,15 +44,6 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
         }
     }
     
-    private double convertUserInput(javax.swing.JTextField input){
-        try {
-            double dollarAmount = InputValidator.convertStringToDollars(input.getText());
-            return dollarAmount;
-        } catch (ParseException ex) {
-             Logger.getLogger(AlterBudgetPanel.class.getName()).log(Level.SEVERE, null, ex);
-             throw new IllegalArgumentException("Unable to convert string to double");
-        }
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -221,7 +212,7 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
             categoryCount++;
             if(checkBox.isSelected()){
                 javax.swing.JTextField userInput = categories.get(checkBox);
-                double dollarInput = convertUserInput(userInput);
+                double dollarInput = InputValidator.convertUserInput(userInput);
                 database.writeToSpendingLimits(categoryCount, dollarInput);
                 checkBox.setSelected(false);
                 userInput.setText("");
