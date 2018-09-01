@@ -24,7 +24,6 @@ public class AddExpensesPanel extends javax.swing.JPanel {
         InputFilter.giveTextBoxFilterForDollars(amountSpentInput);
     }
     
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -136,7 +135,6 @@ public class AddExpensesPanel extends javax.swing.JPanel {
             categoryComboBox.setSelectedIndex(0);
             amountSpentInput.setText("");
         }
-        
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private boolean inputCheck(int selectedIndex, double dollarInput){

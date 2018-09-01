@@ -5,6 +5,7 @@
  */
 package DataManagement;
 
+
 //need a better class name probably - if you think of one just refactor
 public class DataHandler {
     
@@ -27,4 +28,5 @@ public class DataHandler {
                 + amountSpent + ");";
         databaseConnection.executeSQL(sql);
     }
+    
 }
