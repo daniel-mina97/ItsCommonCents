@@ -135,6 +135,7 @@ public class AddExpensesPanel extends javax.swing.JPanel {
             categoryComboBox.setSelectedIndex(0);
             amountSpentInput.setText("");
         }
+        database.printSelectAllFromExpenses();
     }//GEN-LAST:event_submitButtonActionPerformed
 
     private boolean inputCheck(int selectedIndex, double dollarInput){

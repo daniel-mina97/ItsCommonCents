@@ -5,6 +5,8 @@
  */
 package DataManagement;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 //need a better class name probably - if you think of one just refactor
 public class DataHandler {
@@ -29,4 +31,17 @@ public class DataHandler {
         databaseConnection.executeSQL(sql);
     }
     
+    public void printSelectAllFromExpenses() {
+        try {
+            String sql = "SELECT * FROM expenses;";
+            ResultSet results = databaseConnection.executeQuery(sql);
+            while (results.next()) {
+                System.out.println(results.getString("date") + "\t"
+                    + results.getInt("category") + "\t"
+                    + results.getDouble("amount_spent"));
+            }
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
