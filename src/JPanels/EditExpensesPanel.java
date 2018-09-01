@@ -5,6 +5,7 @@
  */
 package JPanels;
 
+import DataManagement.DatabaseConnection;
 /**
  *
  * @author Ella
@@ -14,7 +15,7 @@ public class EditExpensesPanel extends javax.swing.JPanel {
     /**
      * Creates new form EditExpensesPanel
      */
-    public EditExpensesPanel() {
+    public EditExpensesPanel(DatabaseConnection connection) {
         initComponents();
     }
 

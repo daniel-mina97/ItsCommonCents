@@ -6,6 +6,7 @@
 package JPanels;
 
 import DataManagement.DataHandler;
+import DataManagement.DatabaseConnection;
 import ItsCommonCents.InputFilter;
 import ItsCommonCents.InputValidator;
 import java.util.LinkedHashMap;
@@ -20,7 +21,7 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
 
     private LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
     
-    public AlterBudgetPanel() {
+    public AlterBudgetPanel(DatabaseConnection connection) {
         initComponents();
         categories = new LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField>();
         initMap();

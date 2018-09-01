@@ -5,6 +5,7 @@
  */
 package JPanels;
 
+import DataManagement.DatabaseConnection;;
 /**
  *
  * @author Ella
@@ -14,7 +15,7 @@ public class GraphDataPanel extends javax.swing.JPanel {
     /**
      * Creates new form GraphDataPanel
      */
-    public GraphDataPanel() {
+    public GraphDataPanel(DatabaseConnection connection) {
         initComponents();
     }
 

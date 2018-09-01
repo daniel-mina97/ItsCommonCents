@@ -5,6 +5,7 @@
  */
 package Forms;
 
+import DataManagement.DatabaseConnection;
 import JPanels.AddExpensesPanel;
 import JPanels.AlterBudgetPanel;
 import JPanels.EditExpensesPanel;
@@ -19,7 +20,9 @@ import javax.swing.JPanel;
  */
 public class MainFrame extends javax.swing.JFrame {
 
-    public MainFrame() {
+    private final DatabaseConnection connection;
+    public MainFrame(DatabaseConnection connection) {
+        this.connection = connection;
         initComponents();
         setUpLayout();
     }

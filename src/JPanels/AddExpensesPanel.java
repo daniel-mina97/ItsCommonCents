@@ -6,6 +6,7 @@
 package JPanels;
 
 import DataManagement.DataHandler;
+import DataManagement.DatabaseConnection;
 import ItsCommonCents.InputFilter;
 import ItsCommonCents.InputValidator;
 import java.text.DateFormat;
@@ -20,7 +21,7 @@ public class AddExpensesPanel extends javax.swing.JPanel {
 
     DataHandler database;
     
-    public AddExpensesPanel() {
+    public AddExpensesPanel(DatabaseConnection connection) {
         initComponents();
         database = new DataHandler();
         InputFilter.giveTextBoxFilterForDollars(amountSpentInput);
