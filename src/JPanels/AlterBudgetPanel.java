@@ -20,10 +20,12 @@ import java.util.LinkedHashMap;
 public class AlterBudgetPanel extends javax.swing.JPanel {
 
     private LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
+    private DataHandler database;
     
     public AlterBudgetPanel(DatabaseConnection connection) {
         initComponents();
         categories = new LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField>();
+        database = new DataHandler(connection);
         initMap();
         formatInputComponents();
     }
@@ -204,7 +206,6 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
     //private HashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
     
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        DataHandler database = new DataHandler();
         int categoryCount = 0; //prob a better way to handle this
         
         for(javax.swing.JCheckBox checkBox: categories.keySet()){

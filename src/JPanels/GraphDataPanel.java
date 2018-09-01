@@ -5,6 +5,7 @@
  */
 package JPanels;
 
+import DataManagement.DataHandler;
 import DataManagement.DatabaseConnection;;
 /**
  *
@@ -12,11 +13,13 @@ import DataManagement.DatabaseConnection;;
  */
 public class GraphDataPanel extends javax.swing.JPanel {
 
+    private final DataHandler database;
     /**
      * Creates new form GraphDataPanel
      */
     public GraphDataPanel(DatabaseConnection connection) {
         initComponents();
+        database = new DataHandler(connection);
     }
 
     /**

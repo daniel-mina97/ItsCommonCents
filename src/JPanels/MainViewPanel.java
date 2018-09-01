@@ -5,6 +5,7 @@
  */
 package JPanels;
 
+import DataManagement.DataHandler;
 import DataManagement.DatabaseConnection;
 /**
  *
@@ -12,11 +13,13 @@ import DataManagement.DatabaseConnection;
  */
 public class MainViewPanel extends javax.swing.JPanel {
 
+    private final DataHandler database;
     /**
      * Creates new form MainViewPanel
      */
     public MainViewPanel(DatabaseConnection connection) {
         initComponents();
+        database = new DataHandler(connection);
     }
 
     /**

@@ -19,7 +19,7 @@ import java.util.Date;
  */
 public class AddExpensesPanel extends javax.swing.JPanel {
 
-    DataHandler database;
+    private DataHandler database;
     
     public AddExpensesPanel(DatabaseConnection connection) {
         initComponents();
