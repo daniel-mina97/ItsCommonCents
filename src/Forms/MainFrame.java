@@ -19,14 +19,15 @@ import javax.swing.JPanel;
  * @author Ella
  */
 public class MainFrame extends javax.swing.JFrame {
-
+    
     private final DatabaseConnection connection;
+    
     public MainFrame(DatabaseConnection connection) {
         this.connection = connection;
         initComponents();
         setUpLayout();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -176,7 +177,6 @@ public class MainFrame extends javax.swing.JFrame {
         CardLayout card = (CardLayout)mainPanel.getLayout();
         card.show(mainPanel, "mainView");
     }//GEN-LAST:event_mainViewButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */

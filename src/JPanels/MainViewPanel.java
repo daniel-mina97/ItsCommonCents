@@ -12,7 +12,7 @@ import DataManagement.DatabaseConnection;
  * @author Ella
  */
 public class MainViewPanel extends javax.swing.JPanel {
-
+    
     private final DataHandler database;
     /**
      * Creates new form MainViewPanel
