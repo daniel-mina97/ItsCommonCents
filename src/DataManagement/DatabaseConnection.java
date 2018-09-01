@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.ResultSet;
 
 public class DatabaseConnection {
     
@@ -53,5 +54,16 @@ public class DatabaseConnection {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+    
+    public ResultSet executeQuery(String query) {
+        ResultSet results = null;
+        try {
+            Statement statement = connection.createStatement();
+            results = statement.executeQuery(query);
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return results;
     }
 }
