@@ -9,9 +9,6 @@ import DataManagement.DataHandler;
 import DataManagement.DatabaseConnection;
 import ItsCommonCents.InputFilter;
 import ItsCommonCents.InputValidator;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  *
@@ -27,12 +24,6 @@ public class AddExpensesPanel extends javax.swing.JPanel {
         InputFilter.giveTextBoxFilterForDollars(amountSpentInput);
     }
     
-    private String getDate(){
-        DateFormat df = new SimpleDateFormat("YYYY-MM-dd");
-        Date currentDate = new Date();
-        System.out.println(df.format(currentDate));
-        return df.format(currentDate);
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -141,9 +132,7 @@ public class AddExpensesPanel extends javax.swing.JPanel {
         int selectedCategoryIndex = categoryComboBox.getSelectedIndex();
         double dollarInput = InputValidator.convertUserInput(amountSpentInput);
         if (inputCheck(selectedCategoryIndex, dollarInput)){
-            String currentDate = getDate();
-            System.out.println("Current Date: " + currentDate);
-            database.writeToExpenses(currentDate, selectedCategoryIndex - 1, dollarInput);
+            database.writeToExpenses(selectedCategoryIndex - 1, dollarInput);
             categoryComboBox.setSelectedIndex(0);
             amountSpentInput.setText("");
         }

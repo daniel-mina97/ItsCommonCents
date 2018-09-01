@@ -21,10 +21,8 @@ public class DataHandler {
         databaseConnection.executeSQL(sql);
     }
     
-    public void writeToExpenses(String date, int category, double amountSpent){
-        System.out.println("Date to Database: " + date);
-        String sql = "INSERT INTO expenses VALUES("
-                + date + ", "
+    public void writeToExpenses(int category, double amountSpent){
+        String sql = "INSERT INTO expenses VALUES( date('now'),"
                 + category + ", "
                 + amountSpent + ");";
         databaseConnection.executeSQL(sql);
