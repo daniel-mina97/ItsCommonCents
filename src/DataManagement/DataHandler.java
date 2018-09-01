@@ -10,8 +10,8 @@ public class DataHandler {
     
     DatabaseConnection databaseConnection;
     
-    public DataHandler(){
-        this.databaseConnection = new DatabaseConnection();
+    public DataHandler(DatabaseConnection connection){
+        this.databaseConnection = connection;
     }
     
     public void writeToSpendingLimits(int sequence, double amount){

@@ -23,7 +23,7 @@ public class AddExpensesPanel extends javax.swing.JPanel {
     
     public AddExpensesPanel(DatabaseConnection connection) {
         initComponents();
-        database = new DataHandler();
+        database = new DataHandler(connection);
         InputFilter.giveTextBoxFilterForDollars(amountSpentInput);
     }
     
