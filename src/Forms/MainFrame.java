@@ -25,9 +25,17 @@ public class MainFrame extends javax.swing.JFrame {
     public MainFrame(DatabaseConnection connection) {
         this.connection = connection;
         initComponents();
+        initPanels();
         setUpLayout();
     }
     
+    private void initPanels() {
+        alterBudgetPanel = new AlterBudgetPanel(connection);
+        addExpensesPanel = new AddExpensesPanel(connection);
+        editExpensesPanel = new EditExpensesPanel(connection);
+        graphDataPanel = new GraphDataPanel(connection);
+        mainViewPanel = new MainViewPanel(connection);
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -199,11 +207,11 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton mainViewButton;
     // End of variables declaration//GEN-END:variables
     private CardLayout cl = new CardLayout();
-    private final JPanel alterBudgetPanel = new AlterBudgetPanel();
-    private final JPanel addExpensesPanel = new AddExpensesPanel();
-    private final JPanel editExpensesPanel = new EditExpensesPanel();
-    private final JPanel graphDataPanel = new GraphDataPanel();
-    private final JPanel mainViewPanel = new MainViewPanel();
+    private JPanel alterBudgetPanel;
+    private JPanel addExpensesPanel;
+    private JPanel editExpensesPanel;
+    private JPanel graphDataPanel;
+    private JPanel mainViewPanel;
     
 
 }
