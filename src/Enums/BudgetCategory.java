@@ -51,6 +51,7 @@ public class BudgetCategory {
                 return 0; 
         }
     }
+    
     public static String getBudgetCategoryString(int categoryValue) {
         Category category = convertIntToCategory(categoryValue);
         switch(category) {

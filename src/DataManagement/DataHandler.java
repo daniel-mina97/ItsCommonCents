@@ -16,11 +16,13 @@ public class DataHandler {
         deleteOldLimit(category);
         writeNewLimit(category, amount);
     }
+    
     private void deleteOldLimit(int category) {
         String sql = "DELETE FROM spending_limits WHERE category="
                 + category + ";";
         databaseConnection.executeSQL(sql);
     }
+    
     private void writeNewLimit(int category, double amount) {
         String sql = "INSERT INTO spending_limits VALUES("
                 + category + ", "
@@ -49,6 +51,7 @@ public class DataHandler {
             System.out.println(e.getMessage());
         }
     }
+    
     public void printSelectAllFromSpendingLimits() {
         try {
             String sql = "SELECT * FROM spending_limits;";

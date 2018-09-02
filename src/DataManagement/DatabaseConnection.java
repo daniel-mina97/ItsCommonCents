@@ -46,7 +46,7 @@ public class DatabaseConnection {
                 + " spending_limit real)";
         executeSQL(sql);
     }
-        
+            
     public void executeSQL(String query) {
         try {
             Statement statement = connection.createStatement();

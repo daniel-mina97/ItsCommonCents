@@ -11,6 +11,7 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
 
     private final ArrayList<enumComponentContainer> enumComponentList;
     private final DataHandler database;
+    
     class enumComponentContainer {
         public final BudgetCategory.Category category;
         public final javax.swing.JCheckBox checkBox;
@@ -207,7 +208,6 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
     //private HashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
     
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        
 
         for(enumComponentContainer container : enumComponentList){
             if(container.checkBox.isSelected()){
