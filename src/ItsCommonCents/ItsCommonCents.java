@@ -12,7 +12,6 @@ public class ItsCommonCents {
         
         connection = new DatabaseConnection();
         MainFrame frame = new MainFrame(connection);
-        //SettingsInitializer frame = new SettingsInitializer();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);

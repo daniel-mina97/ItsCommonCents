@@ -1,22 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JPanels;
 
 import DataManagement.DataHandler;
 import DataManagement.DatabaseConnection;
-/**
- *
- * @author Ella
- */
+
 public class MainViewPanel extends javax.swing.JPanel {
     
     private final DataHandler database;
-    /**
-     * Creates new form MainViewPanel
-     */
+
     public MainViewPanel(DatabaseConnection connection) {
         initComponents();
         database = new DataHandler(connection);

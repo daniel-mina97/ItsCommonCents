@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JPanels;
 
 import DataManagement.DataHandler;
@@ -11,12 +6,6 @@ import ItsCommonCents.InputFilter;
 import ItsCommonCents.InputValidator;
 import java.util.LinkedHashMap;
 
-
-
-/**
- *
- * @author Ella
- */
 public class AlterBudgetPanel extends javax.swing.JPanel {
 
     private LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;

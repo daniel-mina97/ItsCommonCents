@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package JPanels;
 
 import Enums.BudgetCategory;
@@ -11,10 +6,6 @@ import DataManagement.DatabaseConnection;
 import ItsCommonCents.InputFilter;
 import ItsCommonCents.InputValidator;
 
-/**
- *
- * @author Ella
- */
 public class AddExpensesPanel extends javax.swing.JPanel {
 
     private DataHandler database;

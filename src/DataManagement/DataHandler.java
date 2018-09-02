@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package DataManagement;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import Enums.BudgetCategory;
 
-//need a better class name probably - if you think of one just refactor
 public class DataHandler {
     
     DatabaseConnection databaseConnection;
