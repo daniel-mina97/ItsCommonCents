@@ -4,10 +4,13 @@ import DataManagement.DataHandler;
 import DataManagement.DatabaseConnection;
 import ItsCommonCents.InputFilter;
 import ItsCommonCents.InputValidator;
+import Enums.BudgetCategory;
+import java.util.ArrayList;
 
 public class AlterBudgetPanel extends javax.swing.JPanel {
 
-    private DataHandler database;
+    private final ArrayList<enumComponentContainer> enumComponentList;
+    private final DataHandler database;
     class enumComponentContainer {
         public final BudgetCategory.Category category;
         public final javax.swing.JCheckBox checkBox;
@@ -22,13 +25,24 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
     
     public AlterBudgetPanel(DatabaseConnection connection) {
         initComponents();
+        enumComponentList = new ArrayList<enumComponentContainer>();
         database = new DataHandler(connection);
+        initEnumContainerList();
         formatInputComponents();
     }
     
+    private void initEnumContainerList(){
+        enumComponentList.add(new enumComponentContainer(BudgetCategory.Category.HOUSING, housingCheckBox, housingInput));
+        enumComponentList.add(new enumComponentContainer(BudgetCategory.Category.UTILITIES, utilitiesCheckBox, utilitiesInput));
+        enumComponentList.add(new enumComponentContainer(BudgetCategory.Category.GROCERIES, groceriesCheckBox, groceriesInput));
+        enumComponentList.add(new enumComponentContainer(BudgetCategory.Category.ENTERTAINMENT, entertainmentCheckBox, entertainmentInput));
+        enumComponentList.add(new enumComponentContainer(BudgetCategory.Category.TRANSPORTATION, transportationCheckBox, transportationInput));
+        enumComponentList.add(new enumComponentContainer(BudgetCategory.Category.MISC, miscCheckBox, miscInput));
     }
     
     private void formatInputComponents(){
+        for(enumComponentContainer container : enumComponentList){
+            InputFilter.giveTextBoxFilterForDollars(container.textField);
         }
     }
     
@@ -194,15 +208,17 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
     
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         
-            if(checkBox.isSelected()){
-                javax.swing.JTextField userInput = categories.get(checkBox);
+
+        for(enumComponentContainer container : enumComponentList){
+            if(container.checkBox.isSelected()){
+                javax.swing.JTextField userInput = container.textField;
                 double dollarInput = InputValidator.convertUserInput(userInput);
-                database.writeToSpendingLimits(categoryCount, dollarInput);
-                checkBox.setSelected(false);
-                userInput.setText("");
+                database.writeToSpendingLimits(BudgetCategory.convertCategoryToInt(container.category), dollarInput);
+                container.checkBox.setSelected(false);
+                container.textField.setText("");
             }
-            categoryCount++;
         }
+        database.printSelectAllFromSpendingLimits();
     }//GEN-LAST:event_submitButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
