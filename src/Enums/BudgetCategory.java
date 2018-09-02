@@ -28,6 +28,14 @@ public class BudgetCategory {
 
     public int getNumVal() {
         return numVal;
+    public static String[] getComboBoxLabels() {
+        Category[] categories = Category.values();
+        ArrayList<String> labelsArrayList = new ArrayList<>();
+        for(Category category : categories) {
+            labelsArrayList.add(getBudgetCategoryString(category));
+        }
+        String[] labelsArray = labelsArrayList.toArray(new String[labelsArrayList.size()]);
+        return labelsArray;
     }
    }
 }

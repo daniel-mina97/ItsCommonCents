@@ -48,7 +48,7 @@ public class AddExpensesPanel extends javax.swing.JPanel {
 
         addExpensesLabel.setText("Add Expenses");
 
-        categoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT ONE", "Housing", "Utilities", "Groceries", "Entertainment", "Transportation", "Misc." }));
+        categoryComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(BudgetCategory.getComboBoxLabels()));
 
         amountSpentLabel.setFont(new java.awt.Font("Lucida Grande", 1, 11)); // NOI18N
         amountSpentLabel.setText("Amount Spent");
