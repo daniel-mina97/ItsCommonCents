@@ -33,6 +33,24 @@ public class BudgetCategory {
         }
     }
     
+    public static int convertCategoryToInt(Category category) {
+        switch(category) {
+            case HOUSING:
+                return 1;
+            case UTILITIES:
+                return 2;
+            case GROCERIES:
+                return 3;
+            case ENTERTAINMENT:
+                return 4;
+            case TRANSPORTATION:
+                return 5;
+            case MISC:
+                return 6;
+            default:
+                return 0; 
+        }
+    }
     public static String getBudgetCategoryString(int categoryValue) {
         Category category = convertIntToCategory(categoryValue);
         switch(category) {
