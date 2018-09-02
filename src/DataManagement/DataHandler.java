@@ -12,14 +12,18 @@ public class DataHandler {
         this.databaseConnection = connection;
     }
     
-    public void writeToSpendingLimits(int sequence, double amount){
+    public void writeToSpendingLimits(int category, double amount){
+        deleteOldLimit(category);
+        writeNewLimit(category, amount);
+    }
     private void deleteOldLimit(int category) {
         String sql = "DELETE FROM spending_limits WHERE category="
                 + category + ";";
         databaseConnection.executeSQL(sql);
     }
+    private void writeNewLimit(int category, double amount) {
         String sql = "INSERT INTO spending_limits VALUES("
-                + sequence + ", "
+                + category + ", "
                 + amount + ");";
         databaseConnection.executeSQL(sql);
     }
