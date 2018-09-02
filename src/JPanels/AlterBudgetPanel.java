@@ -4,33 +4,20 @@ import DataManagement.DataHandler;
 import DataManagement.DatabaseConnection;
 import ItsCommonCents.InputFilter;
 import ItsCommonCents.InputValidator;
-import java.util.LinkedHashMap;
 
 public class AlterBudgetPanel extends javax.swing.JPanel {
 
-    private LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
     private DataHandler database;
     
     public AlterBudgetPanel(DatabaseConnection connection) {
         initComponents();
-        categories = new LinkedHashMap<javax.swing.JCheckBox, javax.swing.JTextField>();
         database = new DataHandler(connection);
-        initMap();
         formatInputComponents();
     }
     
-    private void initMap(){
-        categories.put(housingCheckBox, housingInput);
-        categories.put(utilitiesCheckBox, utilitiesInput);
-        categories.put(groceriesCheckBox, groceriesInput);
-        categories.put(entertainmentCheckBox, entertainmentInput);
-        categories.put(transportationCheckBox, transportationInput);
-        categories.put(miscCheckBox, miscInput);
     }
     
     private void formatInputComponents(){
-        for(javax.swing.JTextField textBox: categories.values()){
-            InputFilter.giveTextBoxFilterForDollars(textBox);
         }
     }
     
@@ -195,9 +182,7 @@ public class AlterBudgetPanel extends javax.swing.JPanel {
     //private HashMap<javax.swing.JCheckBox, javax.swing.JTextField> categories;
     
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
-        int categoryCount = 0; //prob a better way to handle this
         
-        for(javax.swing.JCheckBox checkBox: categories.keySet()){
             if(checkBox.isSelected()){
                 javax.swing.JTextField userInput = categories.get(checkBox);
                 double dollarInput = InputValidator.convertUserInput(userInput);
