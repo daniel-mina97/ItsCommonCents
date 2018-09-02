@@ -198,11 +198,11 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton mainViewButton;
     // End of variables declaration//GEN-END:variables
     private CardLayout cl = new CardLayout();
-    private JPanel alterBudgetPanel;
-    private JPanel addExpensesPanel;
-    private JPanel editExpensesPanel;
-    private JPanel graphDataPanel;
-    private JPanel mainViewPanel;
+    private AlterBudgetPanel alterBudgetPanel;
+    private AddExpensesPanel addExpensesPanel;
+    private EditExpensesPanel editExpensesPanel;
+    private GraphDataPanel graphDataPanel;
+    private MainViewPanel mainViewPanel;
     
 
 }
