@@ -30,6 +30,26 @@ public class BudgetCategory {
 
     public int getNumVal() {
         return numVal;
+    public static String getBudgetCategoryString(Category category) {
+        switch(category) {
+            case NONE:
+                return "";
+            case HOUSING:
+                return "Housing";
+            case UTILITIES:
+                return "Utilities";
+            case GROCERIES:
+                return "Groceries";
+            case ENTERTAINMENT:
+                return "Entertainment";
+            case TRANSPORTATION:
+                return "Transportation";
+            case MISC:
+                return "Miscellaneous";
+            default:
+                return "Invalid Category";
+        }
+    }
     public static String[] getComboBoxLabels() {
         Category[] categories = Category.values();
         ArrayList<String> labelsArrayList = new ArrayList<>();

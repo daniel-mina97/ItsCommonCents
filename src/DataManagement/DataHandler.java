@@ -38,8 +38,8 @@ public class DataHandler {
             ResultSet results = databaseConnection.executeQuery(sql);
             System.out.println("-------------------------------------------------------------");
             while (results.next()) {
-                    + results.getInt("category") + "\t"
                 System.out.println(String.format("%-17s%-17s%21.2f", results.getString("date"),
+                        BudgetCategory.getBudgetCategoryString(results.getInt("category")),
                         results.getDouble("amount_spent")));
             }
         } catch(SQLException e) {
