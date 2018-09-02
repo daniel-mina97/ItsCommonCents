@@ -174,6 +174,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void mainViewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainViewButtonActionPerformed
         CardLayout card = (CardLayout)mainPanel.getLayout();
+        mainViewPanel.RefreshTable();
         card.show(mainPanel, "mainView");
     }//GEN-LAST:event_mainViewButtonActionPerformed
     

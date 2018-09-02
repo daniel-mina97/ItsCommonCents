@@ -10,6 +10,9 @@ public class MainViewPanel extends javax.swing.JPanel {
     public MainViewPanel(DatabaseConnection connection) {
         initComponents();
         database = new DataHandler(connection);
+    public void RefreshTable() {
+        populateTable();
+    }
     }
 
     /**
