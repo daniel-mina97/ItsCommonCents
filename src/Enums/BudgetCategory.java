@@ -12,13 +12,15 @@ package Enums;
 public class BudgetCategory {
     
     public enum Category {
+        NONE,
+        HOUSING, 
+        UTILITIES, 
+        GROCERIES,
+        ENTERTAINMENT,
+        TRANSPORTATION,
+        MISC;
+    }
     
-    HOUSING(0), 
-    UTILITIES(1), 
-    GROCERIES(2),
-    ENTERTAINMENT(3),
-    TRANSPORTATION(4),
-    MISC(5);
     
     private final int numVal;
 

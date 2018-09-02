@@ -131,7 +131,7 @@ public class AddExpensesPanel extends javax.swing.JPanel {
         int selectedCategoryIndex = categoryComboBox.getSelectedIndex();
         double dollarInput = InputValidator.convertUserInput(amountSpentInput);
         if (inputCheck(selectedCategoryIndex, dollarInput)){
-            database.writeToExpenses(selectedCategoryIndex - 1, dollarInput);
+            database.writeToExpenses(selectedCategoryIndex, dollarInput);
             categoryComboBox.setSelectedIndex(0);
             amountSpentInput.setText("");
         }
