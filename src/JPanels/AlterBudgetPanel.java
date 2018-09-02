@@ -8,6 +8,17 @@ import ItsCommonCents.InputValidator;
 public class AlterBudgetPanel extends javax.swing.JPanel {
 
     private DataHandler database;
+    class enumComponentContainer {
+        public final BudgetCategory.Category category;
+        public final javax.swing.JCheckBox checkBox;
+        public final javax.swing.JTextField textField;
+        
+        public enumComponentContainer(BudgetCategory.Category category, javax.swing.JCheckBox checkBox, javax.swing.JTextField textField) {
+            this.category = category;
+            this.checkBox = checkBox;
+            this.textField = textField;
+        }  
+    }
     
     public AlterBudgetPanel(DatabaseConnection connection) {
         initComponents();
