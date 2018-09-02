@@ -13,7 +13,7 @@ public class BudgetCategory {
         TRANSPORTATION,
         MISC;
     }
-    
+       
     public static Category convertIntToCategory(int number) {
         switch(number) {
             case 1:

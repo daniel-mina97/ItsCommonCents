@@ -10,9 +10,11 @@ public class MainViewPanel extends javax.swing.JPanel {
     public MainViewPanel(DatabaseConnection connection) {
         initComponents();
         database = new DataHandler(connection);
+    
     public void RefreshTable() {
         populateTable();
     }
+    
     }
 
     /**
@@ -33,6 +35,7 @@ public class MainViewPanel extends javax.swing.JPanel {
         mainViewPanel.setPreferredSize(new java.awt.Dimension(426, 371));
 
         mainViewLabel.setText("Current Budget");
+
 
         javax.swing.GroupLayout mainViewPanelLayout = new javax.swing.GroupLayout(mainViewPanel);
         mainViewPanel.setLayout(mainViewPanelLayout);

@@ -37,6 +37,10 @@ public class DataHandler {
         databaseConnection.executeSQL(sql);
     }
     
+    
+    
+    
+    
     public void printSelectAllFromExpenses() {
         try {
             String sql = "SELECT * FROM expenses;";
