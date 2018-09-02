@@ -49,4 +49,17 @@ public class DataHandler {
             System.out.println(e.getMessage());
         }
     }
+    public void printSelectAllFromSpendingLimits() {
+        try {
+            String sql = "SELECT * FROM spending_limits;";
+            ResultSet results = databaseConnection.executeQuery(sql);
+            System.out.println("-------------------------------------------------------------");
+            while (results.next()) {
+                System.out.println(String.format("%-17s%-21.2f", BudgetCategory.getBudgetCategoryString(results.getInt("category")),
+                        results.getDouble("spending_limit")));
+            }
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+        }       
+    }
 }
