@@ -13,6 +13,11 @@ public class DataHandler {
     }
     
     public void writeToSpendingLimits(int sequence, double amount){
+    private void deleteOldLimit(int category) {
+        String sql = "DELETE FROM spending_limits WHERE category="
+                + category + ";";
+        databaseConnection.executeSQL(sql);
+    }
         String sql = "INSERT INTO spending_limits VALUES("
                 + sequence + ", "
                 + amount + ");";
