@@ -5,6 +5,7 @@
  */
 package JPanels;
 
+import Enums.BudgetCategory;
 import DataManagement.DataHandler;
 import DataManagement.DatabaseConnection;
 import ItsCommonCents.InputFilter;

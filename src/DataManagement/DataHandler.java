@@ -7,6 +7,7 @@ package DataManagement;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import Enums.BudgetCategory;
 
 //need a better class name probably - if you think of one just refactor
 public class DataHandler {
