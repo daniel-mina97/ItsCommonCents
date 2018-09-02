@@ -67,6 +67,7 @@ public class MainViewPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        jTable1.setEnabled(false);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout mainViewPanelLayout = new javax.swing.GroupLayout(mainViewPanel);
