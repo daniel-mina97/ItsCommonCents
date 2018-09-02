@@ -35,10 +35,11 @@ public class DataHandler {
         try {
             String sql = "SELECT * FROM expenses;";
             ResultSet results = databaseConnection.executeQuery(sql);
+            System.out.println("-------------------------------------------------------------");
             while (results.next()) {
-                System.out.println(results.getString("date") + "\t"
                     + results.getInt("category") + "\t"
-                    + results.getDouble("amount_spent"));
+                System.out.println(String.format("%-17s%-17s%21.2f", results.getString("date"),
+                        results.getDouble("amount_spent")));
             }
         } catch(SQLException e) {
             System.out.println(e.getMessage());
