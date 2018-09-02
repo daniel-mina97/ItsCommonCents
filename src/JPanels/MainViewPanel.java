@@ -2,19 +2,29 @@ package JPanels;
 
 import DataManagement.DataHandler;
 import DataManagement.DatabaseConnection;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 public class MainViewPanel extends javax.swing.JPanel {
     
     private final DataHandler database;
 
     public MainViewPanel(DatabaseConnection connection) {
-        initComponents();
         database = new DataHandler(connection);
+        initComponents();
+        populateTable();
+    }
     
     public void RefreshTable() {
         populateTable();
     }
     
+    private void populateTable() {
+        Object[][] budgetOfCurrentMonth = database.getBudgetOfCurrentMonth();
+        String[] columnNames = {"Category", "Expenses", "Limits", "Remaining Budget"};
+        DefaultTableModel tableModel = new DefaultTableModel(budgetOfCurrentMonth, columnNames);
+        jTable1.setModel(tableModel);
     }
 
     /**
@@ -28,6 +38,8 @@ public class MainViewPanel extends javax.swing.JPanel {
 
         mainViewPanel = new javax.swing.JPanel();
         mainViewLabel = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         mainViewPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainViewPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -36,22 +48,48 @@ public class MainViewPanel extends javax.swing.JPanel {
 
         mainViewLabel.setText("Current Budget");
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Category", "Expenses", "Limit", "Difference"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Double.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout mainViewPanelLayout = new javax.swing.GroupLayout(mainViewPanel);
         mainViewPanel.setLayout(mainViewPanelLayout);
         mainViewPanelLayout.setHorizontalGroup(
             mainViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainViewPanelLayout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
             .addGroup(mainViewPanelLayout.createSequentialGroup()
-                .addGap(210, 210, 210)
+                .addGap(211, 211, 211)
                 .addComponent(mainViewLabel)
-                .addContainerGap(220, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mainViewPanelLayout.setVerticalGroup(
             mainViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainViewPanelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(23, 23, 23)
                 .addComponent(mainViewLabel)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(96, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -78,6 +116,8 @@ public class MainViewPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel mainViewLabel;
     private javax.swing.JPanel mainViewPanel;
     // End of variables declaration//GEN-END:variables
