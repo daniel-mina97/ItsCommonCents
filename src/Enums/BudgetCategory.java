@@ -14,7 +14,7 @@ public class BudgetCategory {
         MISC;
     }
     
-    private static Category convertIntToCategory(int number) {
+    public static Category convertIntToCategory(int number) {
         switch(number) {
             case 1:
                 return Category.HOUSING;
