@@ -24,7 +24,11 @@ public class MainViewPanel extends javax.swing.JPanel {
         Object[][] budgetOfCurrentMonth = database.getBudgetOfCurrentMonth();
         String[] columnNames = {"Category", "Expenses", "Limits", "Remaining Budget"};
         DefaultTableModel tableModel = new DefaultTableModel(budgetOfCurrentMonth, columnNames);
-        jTable1.setModel(tableModel);
+        budgetTable.setModel(tableModel);
+    }
+    
+    private void showOverBudget(String category, String remainingBudget){
+        //category
     }
 
     /**
@@ -39,7 +43,7 @@ public class MainViewPanel extends javax.swing.JPanel {
         mainViewPanel = new javax.swing.JPanel();
         mainViewLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        budgetTable = new javax.swing.JTable();
 
         mainViewPanel.setBackground(new java.awt.Color(255, 255, 255));
         mainViewPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -48,7 +52,7 @@ public class MainViewPanel extends javax.swing.JPanel {
 
         mainViewLabel.setText("Current Budget");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        budgetTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -67,8 +71,8 @@ public class MainViewPanel extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTable1.setEnabled(false);
-        jScrollPane1.setViewportView(jTable1);
+        budgetTable.setEnabled(false);
+        jScrollPane1.setViewportView(budgetTable);
 
         javax.swing.GroupLayout mainViewPanelLayout = new javax.swing.GroupLayout(mainViewPanel);
         mainViewPanel.setLayout(mainViewPanelLayout);
@@ -117,8 +121,8 @@ public class MainViewPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable budgetTable;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JLabel mainViewLabel;
     private javax.swing.JPanel mainViewPanel;
     // End of variables declaration//GEN-END:variables

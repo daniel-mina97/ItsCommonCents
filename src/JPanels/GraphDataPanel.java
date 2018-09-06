@@ -1,7 +1,9 @@
 package JPanels;
 
 import DataManagement.DataHandler;
-import DataManagement.DatabaseConnection;;
+import DataManagement.DatabaseConnection;import org.jfree.chart.Graph;
+import org.jfree.ui.RefineryUtilities;
+;
 
 public class GraphDataPanel extends javax.swing.JPanel {
 
@@ -9,6 +11,10 @@ public class GraphDataPanel extends javax.swing.JPanel {
 
     public GraphDataPanel(DatabaseConnection connection) {
         initComponents();
+        Graph budgetGraph = new Graph("Budget Graph");
+        budgetGraph.pack();
+        RefineryUtilities.centerFrameOnScreen(budgetGraph);
+        budgetGraph.setVisible(true);
         database = new DataHandler(connection);
     }
 
